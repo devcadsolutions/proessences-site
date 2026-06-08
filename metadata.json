@@ -1,0 +1,6 @@
+{
+  "name": "Carvansons Fragrances",
+  "description": "A high-end industrial portfolio, news editorial, and custom compounding inquiry system for Carvansons global fragrance base manufacturing.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
