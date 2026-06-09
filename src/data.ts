@@ -63,7 +63,7 @@ export const APPLICATIONS: FragranceApplication[] = [
     id: 'personal-care',
     title: 'Personal Care',
     icon: 'Sparkles',
-    imageUrl: 'https://images.unsplash.com/photo-1608248597481-496100c80836?auto=format&fit=crop&w=800&q=80',
+    imageUrl: 'https://images.unsplash.com/photo-1552693673-1bf958298935?auto=format&fit=crop&w=800&q=80',
     shortDescription: 'Evocative, skin-safe scent creations designed for cosmetics, soaps, creams, and hair care rituals.',
     longDescription: 'Personal care fragrance requires robust chemical stability. Scents must withstand surfactant levels, high pH environments, and active chemical ingredients while delivering an evocative sensory experience during hot showers, personal hygiene routines or luxurious daily skin creams.',
     commonNotes: ['Aloe Vera', 'Jasmine', 'Lavender', 'Almond Oil Accord', 'Honey Sweet', 'Ylang-Ylang'],
@@ -153,7 +153,7 @@ export const BLOGS: BlogArticle[] = [
 Our design philosophy for the Fruit Splash range was simple: to move beyond traditional lemon cleaners and introduce vibrant, multitudinal profiles. We've merged fresh sparkling mandarin, pink grapefruit, and sweet melons into robust surfactant accords.
 
 These formulations are engineered to cut through chemical bases, neutralize malodors, and leave an uplifted feeling in any living area or office space. CLP-compliant, IFRA certified, and tested strictly for longevity and coloration metrics inside modern cleaning emulsions.`,
-    image: 'https://images.unsplash.com/photo-1610832958506-ee5633619141?auto=format&fit=crop&w=800&q=80',
+    image: 'https://images.unsplash.com/photo-1541643600914-78b084683601?auto=format&fit=crop&w=800&q=80',
     date: 'April 2026',
     readTime: '3 min read'
   },
@@ -192,44 +192,44 @@ It represents a blanket of pure serenity: top notes of pristine cotton blossoms 
 export const REGIONAL_PARTNERS: RegionalPartner[] = [
   {
     country: 'United Kingdom (Headquarters)',
-    company: 'Carvansons Ltd',
+    company: 'Proessences Ltd',
     name: 'Main Technical and Compound Manufacture Hub',
     address: 'Knowsley Park Way, Knowsley Road Industrial Estate, Haslingden, Rossendale, Lancashire, BB4 4RS, United Kingdom',
     phone: '+44 161 766 3768',
-    email: 'hello@carvansons.co.uk',
-    website: 'https://carvansons.co.uk'
+    email: 'hello@proessences.co.uk',
+    website: 'https://proessences.co.uk'
   },
   {
     country: 'United Arab Emirates / Middle East',
     name: 'Middle East Hub',
-    company: 'Carvansons Middle East',
+    company: 'Proessences Middle East',
     address: 'Business Towers, Jumeirah Lake Towers, Dubai, United Arab Emirates',
     phone: '+971 4 456 7890',
-    email: 'dubai@carvansons.co.uk'
+    email: 'dubai@proessences.co.uk'
   },
   {
     country: 'South Africa',
     name: 'Southern Africa Representative',
-    company: 'Carvansons South Africa',
+    company: 'Proessences South Africa',
     address: 'Commercial Hub, Eagle Canyon Office Park, Randburg, Johannesburg, South Africa',
     phone: '+27 (11) 456 7890',
-    email: 'safrica@carvansons.co.uk'
+    email: 'safrica@proessences.co.uk'
   },
   {
     country: 'Ghana & West Africa',
     name: 'West Africa Representative',
-    company: 'Carvansons West Africa',
+    company: 'Proessences West Africa',
     address: 'Airport Residential Area, Accra, Ghana',
     phone: '+233 302 456 7890',
-    email: 'ghana@carvansons.co.uk'
+    email: 'ghana@proessences.co.uk'
   },
   {
     country: 'Southeast Asia Distribution',
     name: 'East Asia Technical Center',
-    company: 'Carvansons Southeast Asia',
+    company: 'Proessences Southeast Asia',
     address: 'CBD Towers, Makati City, Manila, Philippines',
     phone: '+63 2 8456 7890',
-    email: 'manila@carvansons.co.uk'
+    email: 'manila@proessences.co.uk'
   }
 ];
 

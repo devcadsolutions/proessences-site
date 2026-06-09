@@ -1,4 +1,4 @@
-export type AppTab = 'home' | 'about' | 'applications' | 'blog' | 'contact';
+export type AppTab = 'home' | 'about' | 'applications' | 'blog' | 'contact' | 'awards' | 'community';
 
 export interface ScentBriefInput {
   productFormat: string;
