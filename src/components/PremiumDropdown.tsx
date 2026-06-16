@@ -39,7 +39,7 @@ export default function PremiumDropdown({
     >
       {/* Dropdown Label */}
       {label && (
-        <label className="block text-[10px] font-mono uppercase tracking-widest text-[#004d44] font-bold mb-1.5 pl-0.5">
+        <label className="block text-[10px] font-mono uppercase tracking-widest text-[#1E2B16] font-bold mb-1.5 pl-0.5">
           {label}
         </label>
       )}
@@ -49,7 +49,7 @@ export default function PremiumDropdown({
         type="button"
         id={`${id}-trigger`}
         onClick={() => setIsOpen(!isOpen)}
-        className={`w-full h-11 px-4 flex items-center justify-between rounded-lg border focus:outline-none focus:ring-1 transition-all duration-150 shadow-xs cursor-pointer select-none ${isScrolled ? 'bg-white text-gray-700 hover:bg-[#fafaf7] hover:border-gray-400 border-[#e9e5de] focus:ring-[#00876e]' : 'bg-white/20 backdrop-blur-sm text-white hover:bg-white/30 border-white/20 focus:ring-white'}`}
+        className={`w-full h-11 px-4 flex items-center justify-between rounded-lg border focus:outline-none focus:ring-1 transition-all duration-150 shadow-xs cursor-pointer select-none ${isScrolled ? 'bg-white text-gray-700 hover:bg-[#fafaf7] hover:border-gray-400 border-[#e9e5de] focus:ring-[#1E2B16]' : 'bg-white/20 backdrop-blur-sm text-white hover:bg-white/30 border-white/20 focus:ring-white'}`}
         aria-haspopup="listbox"
         aria-expanded={isOpen}
       >
@@ -57,7 +57,7 @@ export default function PremiumDropdown({
         <motion.div
           animate={{ rotate: isOpen ? 180 : 0 }}
           transition={{ duration: 0.2, ease: "easeInOut" }}
-          className={`shrink-0 ml-2 ${isScrolled ? 'text-[#004d44]' : 'text-white'}`}
+          className={`shrink-0 ml-2 ${isScrolled ? 'text-[#1E2B16]' : 'text-white'}`}
         >
           <ChevronDown className="w-4 h-4" />
         </motion.div>
@@ -72,10 +72,10 @@ export default function PremiumDropdown({
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: -5, scale: 0.95 }}
             transition={{ duration: 0.25, ease: [0.22, 1, 0.36, 1] }}
-            className="absolute left-0 right-0 mt-2 z-50 bg-white border border-[#ece7de] rounded-lg shadow-md overflow-hidden"
+            className="absolute left-0 right-0 mt-2 z-50 bg-white/80 backdrop-blur-sm border border-[#ece7de] rounded-lg shadow-md overflow-hidden"
           >
             {/* Elegant Golden Header Accent Bar */}
-            <div className="h-[2px] bg-gradient-to-r from-[#004d44] via-[#b38b4d] to-[#00876e]" />
+            <div className="h-[2px] bg-gradient-to-r from-[#1E2B16] via-[#B28A4A] to-[#596E4E]" />
 
             {/* Content Area - Designed to be elegantly Blank / Custom-Placeholder */}
             <div className="p-6 text-center flex flex-col items-center justify-center space-y-3">
@@ -83,7 +83,7 @@ export default function PremiumDropdown({
                 <FolderClosed className="w-4 h-4 text-[#b38b4d] opacity-80" />
               </div>
               <div className="space-y-1">
-                <h5 className="font-serif text-xs font-semibold text-[#004d44]">
+                <h5 className="font-serif text-xs font-semibold text-[#1E2B16]">
                   Olfactive Directory Empty
                 </h5>
                 <p className="text-[10px] text-gray-400 font-light max-w-[200px] leading-relaxed mx-auto">

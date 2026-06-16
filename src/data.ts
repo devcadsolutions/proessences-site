@@ -1,9 +1,9 @@
 import { BlogArticle, RegionalPartner, FragranceApplication } from './types';
 
 export const METRICS = [
-  { label: 'Year Established', value: '1941' },
-  { label: 'Core Ownership', value: 'Family Owned & Operated' },
-  { label: 'Regional Networks', value: '35+ Countries' },
+  { label: 'Scent Reference Library', value: '7,000+ Fragrance Oils' },
+  { label: 'Core Ownership', value: 'Philippine Supplier' },
+  { label: 'Regional Networks', value: 'Exclusive Partner of Carvansons, UK' },
   { label: 'Combined Perfumer Expertise', value: '50+ Years' },
 ];
 
@@ -12,33 +12,33 @@ export const HERITAGE_TABS = [
     id: 'where',
     title: 'Where We Are',
     icon: 'Globe2',
-    content: `Our global headquarters and state-of-the-art manufacturing facility is based in Rossendale, United Kingdom, supported by an international network of sales offices, regional distributors, and modern warehousing hubs.
+    content: `Proessences operates in the Philippines, providing corporate representation, client consultation, and nationwide distribution from our Quezon City headquarters. 
 
-We operate direct distribution and technical partner presence across key territories including Europe, Dubai (Middle East), South Africa, West Africa (Ghana & Nigeria), and Southeast Asia (Philippines, Thailand, Malaysia, Indonesia).`,
+Our physical inventory and raw material supply are secured through our strategic partnership with CARVANSONS, UK, whose extensive manufacturing facility is based in Rossendale, United Kingdom. This distribution model ensures local brands have rapid, reliable access to premium international fragrance compounds.`,
   },
   {
     id: 'what',
     title: 'What We Do',
     icon: 'Briefcase',
-    content: `We create, manufacture, and distribute high-quality fragrance compounds on a global scale, fully compliant with IFRA (International Fragrance Association) guidelines.
+    content: `Proessences is a leading Philippine supplier of premium perfume oils, fragrance oils, essential oils, and bespoke scent solutions. We supply high-quality, fully compliant fragrance compounds tailored for brands, manufacturers, distributors, resellers, product developers, and wholesale clients.
 
-Our fragrances are developed and manufactured for any application, ranging from fine perfumes to highly technical and functional household or industrial product specifications.
+We provide scents for diverse applications—from fine perfumes and personal care products to home care, candle, and industrial bases.
 
-With an extensive botanical and synthetic ingredient library, we couple traditional craftsmanship with advanced analytical facilities (GC-MS, HPLC). Our blenders handle production runs ranging from small 2kg trial batches to multiple tonnes, tailoring delivery meticulously to your brand's specifications.`,
+Through our distribution network and partnership with CARVANSONS, UK, we provide clients with access to a vast, state-of-the-art fragrance library, analytical testing services, and scalability from small trial orders to bulk wholesale supply.`,
   },
   {
     id: 'approach',
     title: 'Our Approach',
     icon: 'Eye',
-    content: `Our approach originates from our established family culture and core values. We combine centuries-old perfumery wisdom with forward-looking molecular synthesis. Placing the customer and their regulatory comfort at the absolute focus of our labor, we deliver not just fragrance compounds, but commercial identity and long-term product partnership.`,
+    content: `Proessences is built on a foundation of trust, quality, and strong client partnership. We look beyond basic transactions to provide genuine business consultancy and collaborative scent selection. By putting the user's regulatory requirements and business goals at the heart of our service, we deliver premium scents that strengthen your brand identity and long-term market success.`,
   },
   {
     id: 'people',
     title: 'Our People',
     icon: 'Users',
-    content: `We recognize that our people—our analytical chemists, master perfumers, safety regulatory officers, and skilled blenders—are our greatest asset.
+    content: `Our dedicated team in the Philippines includes sales consultants, customer support specialists, and technical advisors committed to serving your business. 
 
-Working together in our technical laboratories, they share an unwavering commitment to quality. The combination of intense curiosity and meticulous chemical discipline results in a highly collaborative team producing world-class fragrance bases.`,
+Supported by the master perfumers, analytical chemists, and regulatory experts of our UK partner, CARVANSONS, we combine local market agility with global fragrance innovation to deliver outstanding product performance.`,
   },
 ];
 
@@ -47,7 +47,7 @@ export const APPLICATIONS: FragranceApplication[] = [
     id: 'fine-fragrance',
     title: 'Fine Fragrance',
     icon: 'Flame',
-    imageUrl: 'https://images.unsplash.com/photo-1541643600914-78b084683601?auto=format&fit=crop&w=800&q=80',
+    imageUrl: '/hero-section/essential-oil.png',
     shortDescription: 'Artistic and complex compositions developed for premium luxury, cologne, and beauty brands.',
     longDescription: 'Fine perfumery demands the highest standard of artistic composition and raw ingredient purity. We develop intricate colognes, Eaux de Toilette, and rich Eaux de Parfum. Our master perfumers balance citrus or green headnotes, jasmine or iris hearts, and deep, lasting foundations of amber, patchouli, and precious wood resins.',
     commonNotes: ['Bergamot Zest', 'Jasmine Sambac', 'Sandalwood', 'Pink Pepper', 'Damask Rose', 'Precious Oud', 'Vetiver Roots'],
@@ -63,7 +63,7 @@ export const APPLICATIONS: FragranceApplication[] = [
     id: 'personal-care',
     title: 'Personal Care',
     icon: 'Sparkles',
-    imageUrl: 'https://images.unsplash.com/photo-1552693673-1bf958298935?auto=format&fit=crop&w=800&q=80',
+    imageUrl: '/hero-section/lavender-bottles.png',
     shortDescription: 'Evocative, skin-safe scent creations designed for cosmetics, soaps, creams, and hair care rituals.',
     longDescription: 'Personal care fragrance requires robust chemical stability. Scents must withstand surfactant levels, high pH environments, and active chemical ingredients while delivering an evocative sensory experience during hot showers, personal hygiene routines or luxurious daily skin creams.',
     commonNotes: ['Aloe Vera', 'Jasmine', 'Lavender', 'Almond Oil Accord', 'Honey Sweet', 'Ylang-Ylang'],
@@ -79,7 +79,7 @@ export const APPLICATIONS: FragranceApplication[] = [
     id: 'household-products',
     title: 'Household Products',
     icon: 'Container',
-    imageUrl: 'https://images.unsplash.com/photo-1581578731548-c64695cc6952?auto=format&fit=crop&w=800&q=80',
+    imageUrl: '/hero-section/lemon-oil.png',
     shortDescription: 'Scents engineered to withstand active clean agents while leaving long-lasting room freshness.',
     longDescription: 'Household products require scents that can cut through harsh active chemicals, chlorine bases, or alkaline surfactants. They need to deliver long-lasting freshness to signify cleanliness to the end consumer.',
     commonNotes: ['Zesty Citrus', 'Fresh Pine Sap', 'Peppermint Leaf', 'Eucalyptus', 'Green Apple', 'Lavender Meadows'],
@@ -95,7 +95,7 @@ export const APPLICATIONS: FragranceApplication[] = [
     id: 'industrial-products',
     title: 'Industrial Products',
     icon: 'ShieldAlert',
-    imageUrl: 'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=800&q=80',
+    imageUrl: '/hero-section/essential-oil.png',
     shortDescription: 'High chemical resistance formulas combined with advanced malodor counteraction technologies.',
     longDescription: 'Industrial fragrances require extremely robust chemical shielding and specialized malodor counteraction (MOC) technologies to cover heavy chemical solvent bases, functional plastics, and high-temp rubber extrusions.',
     commonNotes: ['Menthol Frost', 'Citrus Peel Concentrate', 'Herbal Pine Sap', 'Eucalyptus Leaf', 'Wintergreen Scent'],
@@ -111,7 +111,7 @@ export const APPLICATIONS: FragranceApplication[] = [
     id: 'room-fragrance',
     title: 'Home Fragrance',
     icon: 'Wind',
-    imageUrl: 'https://images.unsplash.com/photo-1547841243-eacb14453cd9?auto=format&fit=crop&w=800&q=80',
+    imageUrl: '/hero-section/citrus-infusediessentialioiliserenity.png',
     shortDescription: 'Evocative ambient air fresheners, reed diffusers, and technical room-spraying formulas.',
     longDescription: 'Our air freshener room solutions include scented disks, gel vectors, active powders, non-aerosol liquid sprays, and specialized chemical odor neutralizers developed to remain highly active in air ducts, laundry cabinets, and open lobbies.',
     commonNotes: ['Crisp Eucalyptus', 'Ocean Breeze Accord', 'Fresh Cotton', 'Clean Linen', 'Bergamot Leaf'],
@@ -127,7 +127,7 @@ export const APPLICATIONS: FragranceApplication[] = [
     id: 'car-care',
     title: 'Automotive Fragrance',
     icon: 'Car',
-    imageUrl: 'https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?auto=format&fit=crop&w=800&q=80',
+    imageUrl: '/hero-section/lemon-oil.png',
     shortDescription: 'Sustained high-temperature ambient release scent solutions designed for vehicle environments.',
     longDescription: 'Automotive olfactory vectors undergo significant thermal stressing. Formulations target high ambient heat within glass cabins, controlled release on hanging cards, and homogeneous dispersion in high-foaming water washes, cleaning wax emulsions, and wheel silicates.',
     commonNotes: ['Active New Leather', 'Sandalwood Citrus', 'Arctic Mint Wind', 'Cherry Rush', 'Espresso Bean'],
@@ -138,98 +138,280 @@ export const APPLICATIONS: FragranceApplication[] = [
       'Compatibility with high-foaming water washes and silicates'
     ],
     safetyInsights: 'Compliant with VOC (Volatile Organic Compound) limits for passenger cabins. Non-toxic on leather or fabric splatters.'
+  },
+  {
+    id: 'flavours',
+    title: 'Flavours',
+    icon: 'Award',
+    imageUrl: 'https://images.unsplash.com/photo-1613478223719-2ab802602423?auto=format&fit=crop&w=800&q=80',
+    shortDescription: 'High-quality, food-grade flavouring substances tailored for oral care, pharmaceuticals, and culinary applications.',
+    longDescription: 'Our flavour development focuses on sensory authenticity, absolute chemical purity, and strict safety profiling. We compound food-grade flavours that elevate oral hygiene lines, pharmaceutical suspensions, syrups, and customized culinary application requirements.',
+    commonNotes: ['Cool Peppermint', 'Spearmint Leaf', 'Sweet Cherry Extractions', 'Fresh Orange Oil', 'Creamy Vanilla'],
+    technicalRequirements: [
+      'Strict food-grade chemical composition checks',
+      'High thermal threshold for baking and extrusion processing',
+      'Homogeneous solubility inside water, syrup, or alcohol vehicles',
+      'GRAS (Generally Recognized as Safe) ingredient compliance'
+    ],
+    safetyInsights: 'Optimized in adherence with international food safety standards and GRAS regulations for oral administration.'
   }
 ];
 
 export const BLOGS: BlogArticle[] = [
   {
-    id: 'fruit-splash-household-collection',
-    title: 'Fruit Splash Household Fragrance Collection',
-    category: 'Collections',
-    tags: ['Fruit Splash', 'Household Care', 'Cleaning Products', 'Fresh Accord'],
-    summary: 'Bright, colorful scents designed especially for household cleaning products. This fragrance collection has been created to bring energy, freshness, and a touch of joy to everyday home and workspace sanitization products.',
-    content: `Meet the Fruit Splash Household Collection. Bright, colorful scents designed especially for household cleaning products. This fragrance collection has been created to bring energy, freshness and a touch of joy to everyday spaces.
+    id: 'cgmp-training-workshop-2024',
+    title: 'Regional cGMP Training and Workshop on Cosmetics',
+    category: ['Workshops & Events', 'Corporate News'],
+    tags: ['cGMP', 'Training', 'Workshop', 'MCCI', 'CCIP', 'Cosmetics', 'Compliance'],
+    summary: '**Proessences Inc.** proudly joined the Regional Current Good Manufacturing Practices (cGMP) Training and Workshop, supporting businesses in delivering safe and high-quality products.',
+    content: `**Proessences Inc.** proudly joined the Regional Current Good Manufacturing Practices (cGMP) Training and Workshop on Cosmetics and Household/Urban Hazardous Substances, organized by the Mandaue Chamber of Commerce and Industry (MCCI) and the Chamber of Cosmetics Industry of the Philippines (CCIP).
 
-Our design philosophy for the Fruit Splash range was simple: to move beyond traditional lemon cleaners and introduce vibrant, multitudinal profiles. We've merged fresh sparkling mandarin, pink grapefruit, and sweet melons into robust surfactant accords.
+Held from August 8–9, 2024 at City Sports Club, Cebu City, the two-day program gathered industry professionals to strengthen awareness on product safety, quality, compliance, and updated manufacturing standards.
 
-These formulations are engineered to cut through chemical bases, neutralize malodors, and leave an uplifted feeling in any living area or office space. CLP-compliant, IFRA certified, and tested strictly for longevity and coloration metrics inside modern cleaning emulsions.`,
-    image: 'https://images.unsplash.com/photo-1541643600914-78b084683601?auto=format&fit=crop&w=800&q=80',
-    date: 'April 2026',
+As part of the event, **Proessences Inc.** was featured in the sponsor talks, supporting the shared goal of helping businesses elevate their manufacturing practices and deliver safe, consistent, and high-quality products to consumers.
+
+This participation reflects **Proessences Inc.**’ continued commitment to the fragrance, cosmetics, and personal care industries through education, collaboration, and industry advancement.
+
+Read full event coverage on RMA News:
+https://www.rmanews.net/2024/08/08/mcci-ccip-holds-2-day-training-on-current-good-manufacturing-practices/`,
+    image: '/08-2024_GoodManufacturing Practice/08-2024_GoodManufacturing Practice.jpeg',
+    date: 'August 2024',
+    readTime: '3 min read',
+    isGalleryPost: true,
+    galleryImages: [
+      '/08-2024_GoodManufacturing Practice/08-2024_GoodManufacturing Practice.jpeg',
+      '/08-2024_GoodManufacturing Practice/4-2.jpeg'
+    ]
+  },
+  {
+    id: 'isipca-perfumery-study-tour-2025',
+    title: 'ISIPCA Perfumery Study Tour: Honoring Bernadette Lim & Gemma Guino',
+    category: ['Workshops & Events', 'Corporate News'],
+    tags: ['ISIPCA', 'Versailles', 'Perfumery Study Tour', 'CCIP', 'Asia Perfume Foundation', 'Proessences'],
+    summary: 'Proessences Inc. and CCIP celebrate Bernadette Lim and Gemma Guino for completing the intensive 3-day study tour at ISIPCA in Versailles, France.',
+    content: `Proessences Inc., in partnership with the Chamber of Cosmetics Industry of the Philippines (CCIP), is incredibly thrilled to congratulate our esteemed industry leaders, **Bernadette Lim** (General Manager of BC Fragrance & Aromatics Mfg. Corporation) and **Gemma Guino** (General Manager of Proessences Inc.), for completing the prestigious 3-day Perfumery Study Tour at the world-renowned **ISIPCA** in Versailles, France!
+
+The hands-on course was successfully completed last May 27-28, 2025, in close cooperation with the Asia Perfume Foundation. This immersive scientific and artistic curriculum offered a rare, top-tier opportunity to refine formulation techniques, decode advanced fragrance accords, and gain profound insights into the delicate balance of beauty science and olfactive artistry.
+
+ISIPCA is globally recognized as one of the world's premier fragrance and cosmetics post-graduate institutions. By participating in this intensive study program, our GMs continue to push the boundaries of fragrance innovation, directly connecting advanced European standards with regional development circles.
+
+Please browse the photos below to explore their direct laboratory trials, sensory evaluation loops, and milestone achievements in Versailles!`,
+    image: '/06-2025_ISIPCA/isipca- (1).jpg',
+    date: 'May 2025',
+    readTime: '3 min read',
+    isGalleryPost: true,
+    galleryImages: [
+      '/06-2025_ISIPCA/isipca- (1).jpg',
+      '/06-2025_ISIPCA/isipca- (2).jpg'
+    ]
+  },
+  {
+    id: 'ccip-womens-month-caravan-2024',
+    title: 'CCIP "Dalagang Filipina" Women\'s Month Caravan',
+    category: ['Workshops & Events', 'Corporate News'],
+    tags: ['ccipwomen', 'ccipwomensmonth', 'chamberofcosmeticsph', 'CCIP50th', 'Dalagang Filipina', 'ProessencesInc'],
+    summary: 'CCIP is proud to present our "Dalagang Filipina" caravan in time for Women\'s Month, providing self-care and feminine hygiene education to grade school students of Pasig Elementary School.',
+    content: `Chamber of Cosmetics Industry of the Philippines (CCIP) is incredibly proud to present our "Dalagang Filipina" caravan in celebration of Women's Month! 
+
+The exclusive community outreach event was held on March 22, 2024, to provide comprehensive self-care and feminine hygiene education to the energetic grade school students of Pasig Elementary School in Candaba, Pampanga. Sharing smiles, hygiene kits, and essential wellness insights, we stood together to support and empower the next generation of resilient Filipinas.
+
+We extend our deepest gratitude to all our supportive CCIP members and sponsors who generously backed this milestone event. Your commitment to community development and wellness has made a lasting, beautifully positive impact.
+
+Special thanks to:
+Ever Bilena • DjmGrandeur • Hello Glow • UL Skin Sciences • Johnson & Johnson • Zizmore • Proessences Inc. • Connell Caldic • Ds Cosmeceutical Manufacturing Laboratory • Christian Cosmetics Science • Amway • Amchem • Green Cross Philippines • Marklene • Juvic Incorporated
+
+✨ **Official Hashtags:** #ccipwomen #ccipwomensmonth #chamberofcosmeticsph #CCIP50th`,
+    image: '/03-2024_ccip_womensmonth/womens-month (2).jpg',
+    date: 'March 2024',
+    readTime: '2 min read',
+    isGalleryPost: true,
+    galleryImages: [
+      '/03-2024_ccip_womensmonth/womens-month (1).jpg',
+      '/03-2024_ccip_womensmonth/womens-month (2).jpg',
+      '/03-2024_ccip_womensmonth/womens-month (3).jpg',
+      '/03-2024_ccip_womensmonth/womens-month (4).jpg',
+      '/03-2024_ccip_womensmonth/womens-month (5).jpg',
+      '/03-2024_ccip_womensmonth/womens-month (6).jpg'
+    ]
+  },
+  {
+    id: 'learning-perfumery-seminar-workshop-2024',
+    title: 'Learning Perfumery: Seminar & Workshop 2024',
+    category: ['Workshops & Events', 'Exhibitions'],
+    tags: ['Seminar', 'Workshop', 'Learning Perfumery', 'Proessences', 'Olfactory Artistry'],
+    summary: 'A detailed look back at the highly interactive and exclusive Learning Perfumery Seminar and Workshop, where cosmetic Chemists, formulators, and brand owners refined their olfactory techniques.',
+    content: `We are incredibly thrilled to share the comprehensive photo highlights of the Learning Perfumery: Seminar and Workshop—an intense hands-on olfactory training event designed for professional cosmetics formulators, cosmetic chemists, brand founders, and sensory artists.
+
+Over the course of this highly engaged masterclass, participants worked alongside our seasoned perfumers to dissect the molecular layers of aroma compounds. From exploring raw isolate science to blending complex heart notes, the seminar paired theoretical raw material knowledge with direct compounding laboratory exercises.
+
+Topics focused heavily on advanced fragrance stability, understanding vapor pressure dynamics for active skin-contact cosmetics, green science extraction methods, and maintaining strict IFRA formulation safety parameters. 
+
+Attendees formulated their own custom accord series, putting theoretical structural rules into action. The creative atmosphere of fragrance trials, sensory panels, and joint olfactory evaluation sessions made this a unforgettable industry milestone.
+
+Browse our curated, high-definition photo gallery below to explore behind-the-scenes moments of laboratory precision, active compounding trials, and collaborative olfactory magic.`,
+    image: '/04-2024_Learning Perfumery - Seminar and Workshop/474559055_486657421150719_1838629810286881788_n.jpg',
+    date: 'April 2024',
+    readTime: '3 min read',
+    isGalleryPost: true,
+    galleryImages: [
+      '/04-2024_Learning Perfumery - Seminar and Workshop/474559055_486657421150719_1838629810286881788_n.jpg',
+      '/04-2024_Learning Perfumery - Seminar and Workshop/474584519_486657544484040_9110071421032719887_n.jpg',
+      '/04-2024_Learning Perfumery - Seminar and Workshop/474640522_486658507817277_8056181248876724171_n.jpg',
+      '/04-2024_Learning Perfumery - Seminar and Workshop/474680319_486657501150711_6004569508777729900_n.jpg',
+      '/04-2024_Learning Perfumery - Seminar and Workshop/474684461_486658657817262_3101348676545843314_n.jpg',
+      '/04-2024_Learning Perfumery - Seminar and Workshop/474688422_486657684484026_6190114950844941693_n.jpg',
+      '/04-2024_Learning Perfumery - Seminar and Workshop/474690352_486657411150720_616416010208621447_n.jpg',
+      '/04-2024_Learning Perfumery - Seminar and Workshop/474694121_486658514483943_3445064785403195191_n.jpg',
+      '/04-2024_Learning Perfumery - Seminar and Workshop/474702427_486658427817285_5820203008713951728_n.jpg',
+      '/04-2024_Learning Perfumery - Seminar and Workshop/474703301_486658747817253_4046603910990145507_n.jpg',
+      '/04-2024_Learning Perfumery - Seminar and Workshop/474726455_486658431150618_1017969812262930907_n.jpg',
+      '/04-2024_Learning Perfumery - Seminar and Workshop/474779976_486657334484061_5803746365160055529_n.jpg',
+      '/04-2024_Learning Perfumery - Seminar and Workshop/474812371_486658691150592_5845353959700923097_n.jpg',
+      '/04-2024_Learning Perfumery - Seminar and Workshop/474825090_486658744483920_6071852148427510448_n.jpg',
+      '/04-2024_Learning Perfumery - Seminar and Workshop/474826906_486657574484037_1863857402259753426_n.jpg',
+      '/04-2024_Learning Perfumery - Seminar and Workshop/474827069_486657527817375_1103614624098463476_n.jpg',
+      '/04-2024_Learning Perfumery - Seminar and Workshop/474855076_486657367817391_6805258327396273540_n.jpg',
+      '/04-2024_Learning Perfumery - Seminar and Workshop/474898574_486658287817299_2543705234973774014_n.jpg',
+      '/04-2024_Learning Perfumery - Seminar and Workshop/474936820_486657634484031_6348522456931994875_n.jpg',
+      '/04-2024_Learning Perfumery - Seminar and Workshop/474975292_486657377817390_2957291881375076712_n.jpg',
+      '/04-2024_Learning Perfumery - Seminar and Workshop/474976865_486658387817289_4679730348528360762_n.jpg'
+    ]
+  },
+  {
+    id: 'cosmobeaute-exhibition-2025',
+    title: 'Cosmobeauté 2025: Happening Now at the World Trade Center',
+    category: 'Exhibitions',
+    tags: ['cosmobeautephilippines', 'cosmobeaute2025', 'Exhibitions', 'Pasay City', 'World Trade Center'],
+    summary: 'Cosmobeauté 2025 is happening now at the World Trade Center in Pasay City! Please visit our Booth at B38. See you there!',
+    content: `Cosmobeauté 2025 is happening now at the World Trade Center in Pasay City!
+
+We are absolutely excited to welcome cosmetics formulators, brand founders, cosmetic chemists, and scent designers to our creative space. Explore our premium fragrance collections, botanical distillates, high-performance home hygiene scent solutions, and sustainable beauty compliance insights.
+
+Please visit our Booth at B38. See you there!
+
+📍 **Location:**
+Cosmobeauté Philippines
+World Trade Center, Pasay City
+
+✨ **Booth Number:** B38
+📅 **Event Dates:** November 2025
+💬 **Featured Tags:** #cosmobeautephilippines #cosmobeaute2025`,
+    image: '/cosmobeaute-exhibition-2025/cosmobeaute-2025- (1).jpg',
+    date: 'November 2025',
+    readTime: '2 min read',
+    isGalleryPost: true,
+    galleryImages: [
+      '/cosmobeaute-exhibition-2025/cosmobeaute-2025- (1).jpg',
+      '/cosmobeaute-exhibition-2025/cosmobeaute-2025- (2).jpg',
+      '/cosmobeaute-exhibition-2025/cosmobeaute-2025- (3).jpg',
+      '/cosmobeaute-exhibition-2025/cosmobeaute-2025- (4).jpg',
+      '/cosmobeaute-exhibition-2025/cosmobeaute-2025- (5).jpg',
+      '/cosmobeaute-exhibition-2025/cosmobeaute-2025- (6).jpg',
+      '/cosmobeaute-exhibition-2025/cosmobeaute-2025- (7).jpg',
+      '/cosmobeaute-exhibition-2025/cosmobeaute-2025- (8).jpg',
+      '/cosmobeaute-exhibition-2025/cosmobeaute-2025- (9).jpg',
+      '/cosmobeaute-exhibition-2025/cosmobeaute-2025- (10).jpg',
+      '/cosmobeaute-exhibition-2025/cosmobeaute-2025- (11).jpg',
+      '/cosmobeaute-exhibition-2025/cosmobeaute-2025- (12).jpg'
+    ]
+  },
+  {
+    id: 'sustainable-booth-design-award-2025',
+    title: 'Recognizing Excellence in Sustainable Booth Design',
+    category: ['Awards & Landmarks', 'Exhibitions'],
+    tags: ['Cosmobeauté', 'Award', 'Sustainability', 'Booth Design', 'Proessences'],
+    summary: 'We extend our congratulations to Proessences Inc. for winning the Sustainability Booth Design Creative Award at Cosmobeauté Philippines 2025, contributing to a greener future.',
+    content: `We are absolutely thrilled and deeply honored to announce that Proessences Inc. has been awarded the prestigious Creative Award for Sustainability Booth Design at Cosmobeauté Philippines 2025!
+
+This highly coveted industry recognition celebrates outstanding achievement in eco-friendly design, low-impact exhibition layout, and creative presentation in the beauty and wellness sector. Our custom-crafted pavilion beautifully consolidated reclaimed timber layers, biodegradable finishes, warm energy-efficient LEDs, and vibrant live botanical installations. This thoughtful design seamlessly highlighted our commitment to circular beauty practices and advanced green fragrance chemistry.
+
+We extend our sincere thanks to the judges, the Cosmobeauté organizers, our hard-working setup and design team, and the thousands of cosmetics formulators and partners who visited our creative pavilion. Thank you for contributing to a more sustainable, responsible, and beautiful future in the fragrance, cosmetics, and wellness industry!`,
+    image: '/cosmobeaute-2025/booth.jpg',
+    date: 'November 2025',
+    readTime: '2 min read'
+  },
+  {
+    id: 'perfumery-seminar-workshop-2025',
+    title: "Carvansons' Perfumery Seminar and Workshop 2025",
+    category: 'Workshops & Events',
+    tags: ['Seminar', 'Workshop', 'Perfumery Masterclass', 'Formulation', 'Carvansons'],
+    summary: "A look back at the milestone success of the Perfumery Seminar and Workshop by Carvansons, where cosmetic formulators, master chemists, and industry leaders completed intensive hands-on scent trials.",
+    content: `We are delighted to share the highlights of the Perfumery Seminar and Workshop 2025—a landmark industry gathering hosted by Carvansons that brought together leading cosmetics formulators, cosmetic chemists, brand founders, and sensory designers.
+
+This high-caliber workshop combined interactive technical seminar units with hands-on fragrance compounding practice. Over several action-packed days, attendees explored advanced olfactory structures, gas chromatography diagnostics (GC-MS, HPLC), sustainable raw material extraction pathways, and rigorous safety compliance workflows (IFRA standards and CLP documentation).
+
+Working directly with master perfumers from Carvansons, participants tested premium botanical extracts, pure essential oils, and next-generation synthetic aromachemical bases to develop their own complex accords. They also gained deep scientific insights into surfactant-stable and temperature-resilient scent behaviors across fine fragrance, personal care, and home care applications.
+
+Below, we are proud to present the curated behind-the-scenes masterclass photo gallery. Browse the interactive photos to experience the creativity, rigorous chemical laboratory precision, and collaborative environment that defines this landmark event by Carvansons.`,
+    image: '/10-2025_workshop/workshop-2025- (1).jpg',
+    date: 'October 2025',
+    readTime: '4 min read',
+    isGalleryPost: true,
+    galleryImages: [
+      '/10-2025_workshop/workshop-2025- (1).jpg',
+      '/10-2025_workshop/workshop-2025- (2).jpg',
+      '/10-2025_workshop/workshop-2025- (3).jpg',
+      '/10-2025_workshop/workshop-2025- (4).jpg',
+      '/10-2025_workshop/workshop-2025- (5).jpg',
+      '/10-2025_workshop/workshop-2025- (6).jpg',
+      '/10-2025_workshop/workshop-2025- (7).jpg',
+      '/10-2025_workshop/workshop-2025- (8).jpg',
+      '/10-2025_workshop/workshop-2025- (9).jpg',
+      '/10-2025_workshop/workshop-2025- (10).jpg'
+    ]
+  },
+  {
+    id: 'cosmobeaute-exhibition-2026',
+    title: 'Join Proessences at Cosmobeauté 2026: Elevating Fragrance Artistry',
+    category: 'Exhibitions',
+    tags: ['Cosmobeauté', 'Exhibition', 'Beauty Trade Show', 'Scent Innovation'],
+    summary: 'We are thrilled to announce Proessences’ participation in the upcoming Cosmobeauté 2026 exhibition. Visit our booth to experience our newest bespoke scent collections, active natural oils, and safe cosmetic perfume formulations.',
+    content: `Proessences is proud to announce our participation in the prestigious Cosmobeauté 2026 Exhibition, the region’s premier beauty trade showcase. This season, our master perfumers and cosmetic technical formulators will unite to showcase our latest breakthroughs in bespoke fragrance design and green science synthesis.
+
+At our custom pavilion, visitors can embark on an immersive olfactory journey, experiencing our latest natural oils, high-stability household ranges, and advanced cosmetic-grade fragrance solutions designed with food-grade safety and IFRA standards.
+
+Whether you are looking to design a signature scent for premium cosmetics, luxury personal care, or modern home hygiene products, our experts will be on hand to discuss collaborative development and tailored compliance formulations. Come and discover your brand's next signature scent with Proessences.
+
+**Event Highlights:**
+• Live Olfactory Mapping & Selection Workshops
+• Premium Cosmetic & Food-Grade Fragrance Demonstration
+• Green Science & Sustainable Scent Development Consultations
+
+We invite all beauty brand owners, cosmetic chemists, and product developers to visit us. Stay tuned for further updates as we count down to the trade event of the season!`,
+    image: '/news/06-26/cosmobeaute_poster.jpg',
+    date: 'June 2026',
     readTime: '3 min read'
   },
   {
-    id: 'lip-fragrances-good-enough-to-eat',
-    title: 'Lip Fragrances – Why Lip Products Smell So Authentic',
-    category: 'Research & Development',
-    tags: ['Cosmetics', 'Lip Fragrances', 'Food Grade', 'Compliance'],
-    summary: 'Fragrance plays a powerful role in the appeal of cosmetics. Learn how safe, food-grade lip fragrances are meticulously developed to elevate brand loyalty and safety simultaneously.',
-    content: `Fragrance plays a powerful role in the appeal of lip products and food-grade lip fragrances are becoming more and more sought after. Whether it's a lip balm, gloss, lipstick or lip oil, the right scent can transform a lip product.
+    id: 'christmas-greeting-company',
+    title: 'A Warm Holiday Greeting: Celebrating Togetherness & Scent Artistry',
+    category: 'Corporate News',
+    tags: ['Christmas', 'Holiday Greeting', 'Company Milestones', 'Gratitude'],
+    summary: 'As the festive season blooms, Proessences extends our warmest Christmas greetings to our valued partners, clients, and friends. Watch our special team video message.',
+    content: `As the festive season surrounds us, the entire team at Proessences extends our warmest, most heartfelt Christmas and holiday greetings to our esteemed partners, loyal clients, and friends.
 
-In this guide, our analytical cosmetic department explores suitable fragrance options, raw material pathways, and flavor enhancement.
+This year has been defined by incredible milestones, creative exhibition accolades, and meaningful community collaborations. We are immensely grateful for the trusted relationships that have allowed us to supply and match premium fragrance formulations throughout the year.
 
-Formulating for direct skin-ingestion contact means adhering to extremely tight safety margins. In our laboratories, each olfactive base undergoes stringent testing for food-grade suitability and low-irritant sensitization loops, while maintaining maximum volatilization and throw to make sure it smells mouthwateringly delicious.`,
-    image: 'https://images.unsplash.com/photo-1586495777744-4413f21062fa?auto=format&fit=crop&w=800&q=80',
-    date: 'April 2026',
-    readTime: '5 min read'
-  },
-  {
-    id: 'cloud-dancer-fragrance-collection',
-    title: 'Cloud Dancer Collection: Embracing Calm & Serenity',
-    category: 'Collections',
-    tags: ['Cloud Dancer', 'Pantone 2026', 'Clarity', 'Wellness'],
-    summary: 'Inspired by a core theme of clinical silence and natural purity, the Cloud Dancer collection delivers quiet cashmere, sweet milk, and pristine cotton blossoms to match wellness-oriented beauty lines.',
-    content: `Pantone has named Cloud Dancer as its Colour of the Year for 2026. This creamy white colour reflects a desire for calm, clarity and fresh starts, offering “a calming influence” and a blank-canvas backdrop for creativity, design and self-expression.
+To commemorate this special season, we invite you to view our special holiday greeting video. We are truly appreciative of the opportunity to be your local scent solutions partner.
 
-To embody this aesthetic, our master perfume blenders have designed the Cloud Dancer Fragrance Collection.
-
-It represents a blanket of pure serenity: top notes of pristine cotton blossoms and fresh sweet milk accord, gliding into middle notes of white powdery iris and soft cedar, resting on premium cashmere musks, dry amber, and clean linen accents. High stability makes it an elegant choice for ambient scenting, soy candles, and high-end bath oils.`,
-    image: 'https://images.unsplash.com/photo-1528459801416-a9e53bbf4e17?auto=format&fit=crop&w=800&q=80',
-    date: 'April 2026',
-    readTime: '4 min read'
+Wishing you a restful holiday season, a Merry Christmas, and a prosperous, beautifully scented New Year!`,
+    image: '/news/06-26/cosmobeaute_poster.jpg',
+    date: 'December 2025',
+    readTime: '2 min read',
+    video: '/christmas-greetings.mp4',
+    isPinned: true
   }
 ];
 
 export const REGIONAL_PARTNERS: RegionalPartner[] = [
   {
-    country: 'United Kingdom (Headquarters)',
-    company: 'Proessences Ltd',
-    name: 'Main Technical and Compound Manufacture Hub',
-    address: 'Knowsley Park Way, Knowsley Road Industrial Estate, Haslingden, Rossendale, Lancashire, BB4 4RS, United Kingdom',
-    phone: '+44 161 766 3768',
-    email: 'hello@proessences.co.uk',
-    website: 'https://proessences.co.uk'
-  },
-  {
-    country: 'United Arab Emirates / Middle East',
-    name: 'Middle East Hub',
-    company: 'Proessences Middle East',
-    address: 'Business Towers, Jumeirah Lake Towers, Dubai, United Arab Emirates',
-    phone: '+971 4 456 7890',
-    email: 'dubai@proessences.co.uk'
-  },
-  {
-    country: 'South Africa',
-    name: 'Southern Africa Representative',
-    company: 'Proessences South Africa',
-    address: 'Commercial Hub, Eagle Canyon Office Park, Randburg, Johannesburg, South Africa',
-    phone: '+27 (11) 456 7890',
-    email: 'safrica@proessences.co.uk'
-  },
-  {
-    country: 'Ghana & West Africa',
-    name: 'West Africa Representative',
-    company: 'Proessences West Africa',
-    address: 'Airport Residential Area, Accra, Ghana',
-    phone: '+233 302 456 7890',
-    email: 'ghana@proessences.co.uk'
-  },
-  {
-    country: 'Southeast Asia Distribution',
-    name: 'East Asia Technical Center',
-    company: 'Proessences Southeast Asia',
-    address: 'CBD Towers, Makati City, Manila, Philippines',
-    phone: '+63 2 8456 7890',
-    email: 'manila@proessences.co.uk'
+    country: 'Philippines (Headquarters)',
+    company: 'Proessences',
+    name: 'Main Office and Distribution Center',
+    address: '10 Neptune Street, Bahay Toro, Quezon City, Philippines',
+    phone: '(02) 8920-9848',
+    email: 'gemma@proessences.com',
+    website: 'https://proessences.com'
   }
 ];
 

@@ -1,4 +1,4 @@
-export type AppTab = 'home' | 'about' | 'applications' | 'blog' | 'contact' | 'awards' | 'community';
+export type AppTab = 'home' | 'about' | 'applications' | 'blog' | 'contact' | 'awards' | 'community' | 'collections' | 'regulation' | 'guide' | 'samples' | 'glossary' | 'faq' | 'home-care' | 'personal-care' | 'room-candles' | 'careers';
 
 export interface ScentBriefInput {
   productFormat: string;
@@ -24,13 +24,17 @@ export interface ScentBriefOutput {
 export interface BlogArticle {
   id: string;
   title: string;
-  category: string;
+  category: string | string[];
   tags: string[];
   summary: string;
   content: string;
   image: string;
   date: string;
   readTime: string;
+  video?: string;
+  isPinned?: boolean;
+  isGalleryPost?: boolean;
+  galleryImages?: string[];
 }
 
 export interface RegionalPartner {

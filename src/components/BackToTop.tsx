@@ -28,7 +28,7 @@ export default function BackToTop() {
           animate={{ opacity: 1, scale: 1 }}
           exit={{ opacity: 0, scale: 0.5 }}
           onClick={scrollToTop}
-          className="fixed bottom-8 right-8 z-50 p-3 bg-[#004d44] text-white rounded-full shadow-lg hover:bg-[#00876e] transition-colors"
+          className="fixed bottom-8 right-8 z-50 p-3 bg-[#1E2B16] text-white rounded-full shadow-lg hover:bg-[#596E4E] transition-colors"
           aria-label="Back to top"
         >
           <ChevronUp className="w-6 h-6" />

@@ -14,7 +14,7 @@ export default function TabLoading() {
           repeat: Infinity,
           ease: "easeInOut"
         }}
-        className="h-12 w-12 border-4 border-[#004d44] border-t-transparent rounded-full"
+        className="h-12 w-12 border-4 border-[#1E2B16] border-t-transparent rounded-full"
       />
     </div>
   );

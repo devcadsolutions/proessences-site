@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import SubpageHeader from './SubpageHeader';
 import { motion, AnimatePresence } from 'motion/react';
 import { Sparkles, Wind, ShieldAlert, Award, Compass, Flame, Car, ChevronRight, Check, ShieldCheck } from 'lucide-react';
 import { AppTab, FragranceApplication } from '../types';
@@ -27,54 +28,20 @@ export default function ApplicationsTab({ setActiveTab }: ApplicationsTabProps) 
       transition={{ duration: 0.4 }}
       className="w-full flex flex-col bg-[#fafaf7] text-[#1e2423]"
     >
-      {/* COMPACT SUBPAGE HEADER */}
-      <section 
-        id="hero-section"
-        className="relative w-full bg-cover bg-center py-20 md:py-32 overflow-hidden text-white"
-        style={{ backgroundImage: `url('https://images.unsplash.com/photo-1541643600914-78b084683601?auto=format&fit=crop&w=1920&q=85')` }}
-      >
-        <div className="absolute inset-0 bg-gradient-to-r from-[#031512]/95 via-[#031512]/80 to-transparent" />
-        
-        {/* Subtle decorative gold leaf line */}
-        <div className="absolute top-0 left-0 right-0 h-0.5 bg-gradient-to-r from-transparent via-[#b38b4d]/20 to-transparent" />
-
-        <div className="relative z-10 w-full max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 text-left space-y-5">
-          <div className="inline-flex items-center gap-2 bg-[#b38b4d]/10 border border-[#b38b4d]/25 text-[#ebd9bd] text-[10px] font-mono tracking-widest uppercase px-3.5 py-1 rounded-full backdrop-blur-xs">
-            <span className="w-1.5 h-1.5 rounded-full bg-[#ebd9bd] animate-pulse" /> Scent Performance &amp; Formulations
-          </div>
-          
-          <h1 className="font-serif text-3xl sm:text-4xl md:text-5.5xl font-normal leading-tight tracking-tight text-[#faf8f5]">
-            Fragrance Application <span className="font-serif italic text-[#ebd9bd]">Sectors &amp; Chemistry.</span>
-          </h1>
-
-          <p className="text-gray-300 text-xs sm:text-sm max-w-xl leading-relaxed font-light">
-            Designing viscosity-stable, heat-tolerant, and surfactant-safe essential oil complexes matching rigorous commercial metrics.
-          </p>
-
-          <div className="pt-2 flex flex-col sm:flex-row sm:items-center gap-4">
-            <button 
-              onClick={scrollToNext}
-              className="px-6 py-2.5 rounded-full bg-[#004d44] hover:bg-[#00876e] text-white font-semibold text-xs tracking-wider uppercase transition-all duration-150 cursor-pointer shadow focus:outline-none"
-            >
-              Browse Applications Specs
-            </button>
-            <button 
-              onClick={() => { setActiveTab('contact'); window.scrollTo({ top: 0, behavior: 'instant' }); }}
-              className="text-xs font-bold uppercase tracking-widest text-white hover:text-[#ebd9bd] transition-colors focus:outline-none select-none"
-            >
-              Submit Custom Project Brief &rarr;
-            </button>
-          </div>
-        </div>
-      </section>
+      <SubpageHeader
+        category="Fragrance Applications"
+        title="Fragrance Application"
+        subtitle="Sectors & Chemistry."
+        backgroundImage="https://images.unsplash.com/photo-1541643600914-78b084683601?auto=format&fit=crop&w=1920&q=85"
+      />
 
       {/* APPLICATIONS LAYOUT CONTAINER */}
       <div id="applications-content" className="w-full max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 py-16 md:py-24 space-y-20">
 
         {/* Intro summary banner */}
         <section className="bg-white rounded border border-[#ece7de] p-8 md:p-12 space-y-4 max-w-4xl mx-auto text-center">
-          <span className="text-[10px] uppercase font-mono font-bold tracking-widest text-[#00876e] block">Olfactive Sectors</span>
-          <h2 className="font-serif text-2xl md:text-3xl text-[#004d44] font-normal tracking-tight">
+          <span className="text-[10px] uppercase font-mono font-bold tracking-widest text-[#596E4E] block">Olfactive Sectors</span>
+          <h2 className="font-serif text-2xl md:text-3xl text-[#1E2B16] font-normal tracking-tight">
             Custom Industrial Formulation for Global Brands
           </h2>
           <p className="text-[#4e5554] text-xs sm:text-sm leading-relaxed font-light max-w-2xl mx-auto">
@@ -92,8 +59,8 @@ export default function ApplicationsTab({ setActiveTab }: ApplicationsTabProps) 
                 id={`app-card-${app.id}`}
                 className={`group rounded border transition-all duration-300 cursor-pointer bg-white flex flex-col justify-between ${
                   isSelected 
-                    ? 'border-[#00876e] ring-1 ring-[#00876e]/10 shadow-sm' 
-                    : 'border-[#ece7de] hover:border-[#00876e]/30'
+                    ? 'border-[#596E4E] ring-1 ring-[#596E4E]/10 shadow-sm' 
+                    : 'border-[#ece7de] hover:border-[#596E4E]/30'
                 }`}
                 onClick={() => {
                   setSelectedApplication(isSelected ? null : app);
@@ -112,16 +79,17 @@ export default function ApplicationsTab({ setActiveTab }: ApplicationsTabProps) 
                   )}
                   <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
                   <div className="absolute bottom-3 left-4 right-4 flex items-center justify-between text-white">
-                    <span className="text-[9px] font-mono tracking-widest uppercase bg-[#004d44]/80 px-2.5 py-0.5 rounded">
+                    <span className="text-[9px] font-mono tracking-widest uppercase bg-[#1E2B16]/80 px-2.5 py-0.5 rounded">
                       {app.id.replace('-', ' ')}
                     </span>
-                    <div className="w-7 h-7 rounded-full bg-[#00876e] text-white flex items-center justify-center shadow-xs">
+                    <div className="w-7 h-7 rounded-full bg-[#596E4E] text-white flex items-center justify-center shadow-xs">
                       {app.id === 'fine-fragrance' && <Flame className="w-3.5 h-3.5" />}
                       {app.id === 'personal-care' && <Sparkles className="w-3.5 h-3.5" />}
                       {app.id === 'household-products' && <Wind className="w-3.5 h-3.5" />}
                       {app.id === 'industrial-products' && <ShieldAlert className="w-3.5 h-3.5" />}
                       {(app.id === 'room-fragrance' || app.id === 'candles' || app.id === 'home-fragrance') && <Compass className="w-3.5 h-3.5" />}
                       {app.id === 'car-care' && <Car className="w-3.5 h-3.5" />}
+                      {app.id === 'flavours' && <Award className="w-3.5 h-3.5" />}
                     </div>
                   </div>
                 </div>
@@ -129,7 +97,7 @@ export default function ApplicationsTab({ setActiveTab }: ApplicationsTabProps) 
                 {/* Information Area */}
                 <div className="p-6 flex-grow flex flex-col justify-between space-y-4">
                   <div className="space-y-1">
-                    <h3 className="font-serif text-lg font-semibold text-[#004d44] group-hover:text-[#00876e] transition-colors leading-tight">
+                    <h3 className="font-serif text-lg font-semibold text-[#1E2B16] group-hover:text-[#596E4E] transition-colors leading-tight">
                       {app.title}
                     </h3>
                     <p className="text-[#555f5e] text-xs leading-relaxed font-light line-clamp-2">
@@ -160,11 +128,11 @@ export default function ApplicationsTab({ setActiveTab }: ApplicationsTabProps) 
               <div className="flex flex-wrap items-center justify-between gap-4 pb-4 border-b border-[#ece7de]">
                 <div>
                   <span className="text-[10px] font-mono uppercase tracking-widest text-[#b38b4d] font-bold">Olfactive Analysis Forecast</span>
-                  <h3 className="font-serif text-2xl font-normal text-[#004d44]">{selectedApplication.title}</h3>
+                  <h3 className="font-serif text-2xl font-normal text-[#1E2B16]">{selectedApplication.title}</h3>
                 </div>
                 <button 
                   onClick={() => { setActiveTab('contact'); window.scrollTo({ top: 0, behavior: 'instant' }); }}
-                  className="px-5 py-2 rounded-full bg-[#004d44] hover:bg-[#00876e] text-white text-xs font-bold uppercase tracking-wider transition-colors cursor-pointer shadow-xs focus:outline-none"
+                  className="px-5 py-2 rounded-full bg-[#1E2B16] hover:bg-[#596E4E] text-white text-xs font-bold uppercase tracking-wider transition-colors cursor-pointer shadow-xs focus:outline-none"
                 >
                   Inquire parameters &rarr;
                 </button>
@@ -198,7 +166,7 @@ export default function ApplicationsTab({ setActiveTab }: ApplicationsTabProps) 
                 <div className="space-y-4 bg-white p-5 rounded border border-[#ece7de] flex flex-col justify-between">
                   <div className="space-y-1.5">
                     <span className="text-xs uppercase tracking-wider text-[#b38b4d] font-bold flex items-center gap-1.5">
-                      <ShieldCheck className="w-4 h-4 text-[#00876e]" /> Compliance &amp; Standards
+                      <ShieldCheck className="w-4 h-4 text-[#596E4E]" /> Compliance &amp; Standards
                     </span>
                     <p className="text-[11px] text-gray-400 leading-relaxed font-light">
                       {selectedApplication.safetyInsights}
@@ -218,7 +186,7 @@ export default function ApplicationsTab({ setActiveTab }: ApplicationsTabProps) 
           {/* List of Sectors */}
           <div className="lg:col-span-4 bg-white border border-[#ece7de] rounded p-6">
             <span className="block text-[10px] uppercase font-mono tracking-widest text-[#b38b4d] mb-1 font-bold">Comprehensive Portfolio</span>
-            <h4 className="font-serif text-base font-bold text-[#004d44] mb-4 pb-2 border-b border-[#ece7de]">Processed Compounds List</h4>
+            <h4 className="font-serif text-base font-bold text-[#1E2B16] mb-4 pb-2 border-b border-[#ece7de]">Processed Compounds List</h4>
             <ul className="space-y-3 text-left">
               {[
                 'Fine Fragrances & Colognes',
@@ -231,7 +199,7 @@ export default function ApplicationsTab({ setActiveTab }: ApplicationsTabProps) 
                 'Aroma chemicals & Custom Aromatics'
               ].map((item, idx) => (
                 <li key={idx} className="flex items-center gap-2.5 text-xs text-gray-600 font-light">
-                  <span className="w-5 h-5 rounded-full bg-[#faf8f4] text-[#00876e] flex items-center justify-center flex-shrink-0 border border-[#ece7de]">
+                  <span className="w-5 h-5 rounded-full bg-[#faf8f4] text-[#596E4E] flex items-center justify-center flex-shrink-0 border border-[#ece7de]">
                     <Check className="w-3 h-3 stroke-[3px]" />
                   </span>
                   <span>{item}</span>
@@ -243,35 +211,34 @@ export default function ApplicationsTab({ setActiveTab }: ApplicationsTabProps) 
           {/* Guide Highlight Column */}
           <div className="lg:col-span-8 bg-white border border-[#ece7de] rounded p-6 md:p-8 flex flex-col justify-between space-y-6">
             <div className="space-y-4">
-              <h3 className="font-serif text-xl md:text-2xl text-[#004d44] font-normal tracking-tight">
-                Aligning Scent Performance with Brand Metrics
+              <h3 className="font-serif text-xl md:text-2xl text-[#1E2B16] font-normal tracking-tight">
+                Fragrance Sampling & Testing Guide
               </h3>
               <p className="text-[#4e5554] text-xs sm:text-sm leading-relaxed font-light">
-                When adding scents to consumer ranges, formulation compatibility with the active delivery carrier is paramount. An incorrect compound can trigger separation, clouding, or rapid evaporation. Our blenders crosscheck all components against physical parameters to guarantee absolute compound stability.
+                Our fragrance creations are used across a wide variety of products. Because every formulation has unique requirements, it is essential to test your chosen fragrance oils in your specific base application. Testing ensures you understand how the fragrance oil interacts with your ingredients and how it affects the final product's performance.
+              </p>
+              <p className="text-[#4e5554] text-xs sm:text-sm leading-relaxed font-light">
+                Proessences is here to ensure your selected fragrance is perfectly suited for your final product. Our application process includes evaluating fragrance oils, measuring the impact of quality, aroma, and color on the final product, and supplying samples as requested (oil, cream, spray, or candle).
               </p>
             </div>
 
-            <div className="bg-[#faf8f4] border border-[#ece7de] rounded p-4 text-center">
-              <p 
-                className="text-[#b38b4d] font-serif text-xs font-bold hover:underline cursor-pointer" 
-                onClick={() => { setActiveTab('about'); window.scrollTo({ top: 0, behavior: 'instant' }); }}
-              >
-                Read our essential guide to olfactory chemistry &amp; standards &copy;
-              </p>
+            <div className="space-y-4">
+              <h4 className="font-serif text-lg text-[#1E2B16]">Samples available in application types:</h4>
+              <div className="flex flex-wrap gap-2 text-[11px] text-gray-600">
+                {['Perfumes', 'Body Lotions', 'Essential Oils', 'Laundry', 'Household', 'Personal Care', 'Candles', 'Diffusers', 'Matches'].map(app => (
+                  <span key={app} className="bg-[#faf8f4] border border-[#ece7de] px-3 py-1 rounded-full">{app}</span>
+                ))}
+              </div>
             </div>
 
-            <div className="space-y-4 pt-2 text-left">
-              <p className="text-gray-400 text-xs leading-relaxed font-light italic">
-                We advise and handle CLP label registrations, MSDS declarations, and compliance certificates for exporters globally.
-              </p>
-              <div>
+            <div className="pt-2 text-left">
+                <p className="text-gray-500 text-xs italic mb-4">All products conform to the highest European quality standards. We work on a per-project basis with a guarantee of exclusivity.</p>
                 <button 
                   onClick={() => { setActiveTab('contact'); window.scrollTo({ top: 0, behavior: 'instant' }); }}
-                  className="px-6 py-2.5 bg-[#004d44] hover:bg-[#00876e] text-white font-bold text-xs uppercase tracking-wider rounded-full transition-all cursor-pointer shadow-xs focus:outline-none"
+                  className="px-6 py-2.5 bg-[#1E2B16] hover:bg-[#596E4E] text-white font-bold text-xs uppercase tracking-wider rounded-full transition-all cursor-pointer shadow-xs focus:outline-none"
                 >
                   Contact Our Technical Team
                 </button>
-              </div>
             </div>
           </div>
         </section>

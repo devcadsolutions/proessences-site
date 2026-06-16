@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { Helmet } from 'react-helmet-async';
-import { Menu, X, HelpCircle, ArrowRight } from 'lucide-react';
+import { Menu, X, HelpCircle, ArrowRight, Instagram, Facebook } from 'lucide-react';
 import { AppTab, BlogArticle } from './types';
+
+import ProessencesLogoWithTextSide from '../assets/proessencesLogoWithTextside.png';
 
 // Import modular tab components
 import HomeTab from './components/HomeTab';
@@ -10,12 +12,24 @@ import AboutTab from './components/AboutTab';
 import ApplicationsTab from './components/ApplicationsTab';
 import BlogTab from './components/BlogTab';
 import ContactTab from './components/ContactTab';
+import GlossaryTab from './components/GlossaryTab';
+import FaqTab from './components/FaqTab';
+import HomeCareTab from './components/HomeCareTab';
+import FragranceCollectionsTab from './components/FragranceCollectionsTab';
+import RegulationComplianceTab from './components/RegulationComplianceTab';
+import GuideTab from './components/GuideTab';
+import SamplesTab from './components/SamplesTab';
 import AwardsRecognition from './components/AwardsRecognition';
 import CommunityInitiatives from './components/CommunityInitiatives';
 import PremiumDropdown from './components/PremiumDropdown';
 import SimpleDropdown from './components/SimpleDropdown';
+import MobileCollapsibleMenuItem from './components/MobileCollapsibleMenuItem';
 import BackToTop from './components/BackToTop';
 import TabLoading from './components/TabLoading';
+import Chatbot from './components/Chatbot';
+import PersonalCareTab from './components/PersonalCareTab';
+import RoomCandlesTab from './components/RoomCandlesTab';
+import CareersTab from './components/CareersTab';
 
 export default function App() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -25,10 +39,12 @@ export default function App() {
   const [selectedBlog, setSelectedBlog] = useState<BlogArticle | null>(null);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [hasApiKey, setHasApiKey] = useState<boolean | null>(null);
+  const [previousActiveTab, setPreviousActiveTab] = useState<AppTab | null>(null);
 
   // Manage tab switching with a small delay for perceived performance
   const handleTabChange = (tab: AppTab) => {
     setIsLoading(true);
+    setPreviousActiveTab(activeTab);
     setActiveTab(tab);
     window.scrollTo({ top: 0, behavior: 'instant' });
     setTimeout(() => setIsLoading(false), 500); // 500ms min loading time
@@ -37,11 +53,13 @@ export default function App() {
   // Monitor scroll for header background
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50);
+      const threshold = 20; // Triggers on the first scroll of the section
+      setIsScrolled(window.scrollY > threshold);
     };
     window.addEventListener('scroll', handleScroll);
+    handleScroll(); // Run immediately on tab change/mount
     return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+  }, [activeTab]);
 
   // Query API capability check on mount
   useEffect(() => {
@@ -55,8 +73,10 @@ export default function App() {
       });
   }, []);
 
+  const isHeaderSolid = isScrolled || (activeTab === 'blog' && selectedBlog !== null);
+
   return (
-    <div className="min-h-screen bg-[#faf8f4] flex flex-col font-sans antialiased text-[#1e2524]">
+    <div className="min-h-screen bg-[#FCFBF8] flex flex-col font-sans antialiased text-[#6F685F]">
       
       <Helmet>
         <title>{`Proessences | ${activeTab.charAt(0).toUpperCase() + activeTab.slice(1)}`}</title>
@@ -67,7 +87,7 @@ export default function App() {
       <BackToTop />
 
       {/* HEADER BAR */}
-      <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? 'bg-white shadow-sm border-b border-[#e9e5de]' : 'bg-transparent'}`}>
+      <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isHeaderSolid ? 'bg-[#FCFBF8] shadow-xs border-b border-[#EEE8DD]' : 'bg-transparent'}`}>
         <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3.5 flex items-center justify-between">
           
           {/* Logo Brand Link */}
@@ -76,17 +96,11 @@ export default function App() {
             className="flex items-center gap-3.5 cursor-pointer group" 
             onClick={() => { handleTabChange('home'); setSelectedBlog(null); }}
           >
-            <div className={`h-11 w-11 flex items-center justify-center font-serif font-bold text-xl rounded-lg border transition-transform group-hover:scale-[1.03] ${isScrolled ? 'bg-[#004d44] text-[#fbfaf6] border-[#00876e]/20' : 'bg-white/20 backdrop-blur-sm text-white border-white/20'}`}>
-              C
-            </div>
-            <div>
-              <span className={`font-serif text-base lg:text-lg font-bold tracking-tight block leading-none ${isScrolled ? 'text-[#004d44]' : 'text-white'}`}>
-                Proessences
-              </span>
-              <p className={`text-[9px] tracking-wider font-medium mt-1 ${isScrolled ? 'text-gray-400' : 'text-white/70'}`}>
-                A World of Fragrance
-              </p>
-            </div>
+            <img 
+              src={ProessencesLogoWithTextSide} 
+              alt="Proessences Logo" 
+              className={`h-20 sm:h-[5.5rem] w-auto transition-all duration-300 group-hover:scale-[1.03] ${isHeaderSolid ? '' : 'filter-gold'}`} 
+            />
           </div>
 
           {/* Desktop Navigation Link Menu */}
@@ -98,10 +112,10 @@ export default function App() {
                 key={tab.id}
                 id={`tab-btn-${tab.id}`}
                 onClick={() => handleTabChange(tab.id as AppTab)}
-                className={`relative py-1.5 text-[11px] font-sans font-medium tracking-widest uppercase transition-colors duration-150 cursor-pointer focus:outline-none ${
-                  isScrolled 
-                    ? (activeTab === tab.id ? 'text-[#004d44] font-semibold' : 'text-gray-500 hover:text-[#004d44]')
-                    : (activeTab === tab.id ? 'text-white font-semibold' : 'text-white/70 hover:text-white')
+                className={`relative py-1.5 text-[11px] font-sans font-normal tracking-widest uppercase transition-colors duration-150 cursor-pointer focus:outline-none ${
+                  isHeaderSolid 
+                    ? (activeTab === tab.id ? 'text-[#1E2B16]' : 'text-[#6F685F] hover:text-[#1E2B16]')
+                    : (activeTab === tab.id ? 'text-[#FCFBF8]' : 'text-[#FCFBF8]/70 hover:text-[#FCFBF8]')
                 }`}
               >
                 {tab.label}
@@ -116,15 +130,17 @@ export default function App() {
             <SimpleDropdown 
               label="About Us" 
               items={['Our History', 'Awards & Recognition', 'Community Initiatives', 'Glossary of Fragrance Terms', 'Frequently Asked Questions | Fragrance Creation']} 
-              isScrolled={isScrolled}
+              isScrolled={isHeaderSolid}
               onSelect={(item) => {
                 if (item === 'Awards & Recognition') handleTabChange('awards');
                 else if (item === 'Community Initiatives') handleTabChange('community');
+                else if (item === 'Glossary of Fragrance Terms') handleTabChange('glossary');
+                else if (item === 'Frequently Asked Questions | Fragrance Creation') handleTabChange('faq');
                 else handleTabChange('about');
               }}
             />
             <SimpleDropdown 
-              label="Bespoke Fragrance Oil Creation" 
+              label="Fragrance Oil Creation" 
               items={[
                 'Our Fragrance Oil Collections',
                 'Fragrance Regulation and Compliance',
@@ -132,31 +148,46 @@ export default function App() {
                 'Natural Fragrances, Essential Oils and Fragrance Oils – Our Guide',
                 'Fragrance Application Samples'
               ]}
-              isScrolled={isScrolled}
-              onSelect={() => handleTabChange('applications')}
+              isScrolled={isHeaderSolid}
+              onSelect={(item) => {
+                if (item === 'Our Fragrance Oil Collections') handleTabChange('collections');
+                else if (item === 'Fragrance Regulation and Compliance') handleTabChange('regulation');
+                else if (item === 'Our Technical Expertise') handleTabChange('about');
+                else if (item.startsWith('Natural Fragrances')) handleTabChange('guide');
+                else if (item === 'Fragrance Application Samples') handleTabChange('samples');
+              }}
             />
             <SimpleDropdown 
               label="Fragrance Applications" 
               items={[
-                'Car Care Fragrances',
-                'Home Care & Cleaning',
                 'Perfume & Fine Fragrance',
-                'Personal Care and Beauty',
-                'Room and Candles Fragrances'
+                'Personal Care & Beauty',
+                'Home Care & Cleaning',
+                'Room & Candles Fragrances',
+                'Car Care Fragrances',
+                'Flavours'
               ]}
-              isScrolled={isScrolled}
-              onSelect={() => handleTabChange('applications')}
+              isScrolled={isHeaderSolid}
+              onSelect={(item) => {
+                if (item === 'Perfume & Fine Fragrance') handleTabChange('applications');
+                else if (item === 'Personal Care & Beauty') handleTabChange('personal-care');
+                else if (item === 'Home Care & Cleaning') handleTabChange('home-care');
+                else if (item === 'Room & Candles Fragrances') handleTabChange('room-candles');
+                else if (item === 'Car Care Fragrances') handleTabChange('applications');
+                else if (item === 'Flavours') handleTabChange('applications');
+                else handleTabChange('applications');
+              }}
             />
             <button
               id="tab-btn-blog"
               onClick={() => handleTabChange('blog')}
-              className={`relative py-1.5 text-[11px] font-sans font-medium tracking-widest uppercase transition-colors duration-150 cursor-pointer focus:outline-none ${
-                isScrolled 
-                  ? (activeTab === 'blog' ? 'text-[#004d44] font-semibold' : 'text-gray-500 hover:text-[#004d44]')
-                  : (activeTab === 'blog' ? 'text-white font-semibold' : 'text-white/70 hover:text-white')
+              className={`relative py-1.5 text-[11px] font-sans font-normal tracking-widest uppercase transition-colors duration-150 cursor-pointer focus:outline-none ${
+                isHeaderSolid 
+                  ? (activeTab === 'blog' ? 'text-[#1E2B16]' : 'text-[#6F685F] hover:text-[#1E2B16]')
+                  : (activeTab === 'blog' ? 'text-[#FCFBF8]' : 'text-[#FCFBF8]/70 hover:text-[#FCFBF8]')
               }`}
             >
-              Fragrance Blog
+              Blog
               {activeTab === 'blog' && (
                 <motion.div 
                   layoutId="activeTabUnderline" 
@@ -166,15 +197,25 @@ export default function App() {
             </button>
             <SimpleDropdown 
               label="Contact Us" 
-              items={['Careers']}
-              isScrolled={isScrolled}
-              onSelect={() => handleTabChange('contact')}
+              id="contact-dropdown"
+              items={['Inquiry', 'Careers']}
+              isScrolled={isHeaderSolid}
+              onSelect={(item) => {
+                setSelectedBlog(null);
+                if (item === 'Careers') {
+                  handleTabChange('careers');
+                } else {
+                  handleTabChange('contact');
+                }
+              }}
             />
           </nav>
           
            <button 
              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-             className="lg:hidden p-2 text-[#004d44] focus:outline-none focus:ring-2 focus:ring-[#00876e] rounded"
+             className={`lg:hidden p-2 focus:outline-none focus:ring-2 focus:ring-[#596E4E] rounded transition-colors ${
+               isHeaderSolid ? 'text-[#1E2B16]' : 'text-[#FCFBF8]'
+             }`}
              aria-label="Toggle Navigation Screen"
              id="mobile-menu-burger"
            >
@@ -199,31 +240,64 @@ export default function App() {
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -20 }}
               transition={{ duration: 0.2 }}
-              className="lg:hidden fixed top-[73px] left-0 right-0 bg-white border-b border-[#e9e6df] shadow-lg z-40 p-4 flex flex-col gap-2.5"
+              className="lg:hidden fixed top-[73px] left-0 right-0 bg-[#FCFBF8] border-b border-[#EEE8DD] shadow-lg z-40 p-4 flex flex-col gap-2.5"
             >
-              {[
-                { id: 'home', label: 'Home' },
-                { id: 'about', label: 'About Us' },
-                { id: 'applications', label: 'Fragrance Applications' },
-                { id: 'blog', label: 'Fragrance News Blog' },
-                { id: 'contact', label: 'Contact Technical HQ' }
-              ].map((tab) => (
-                <button
-                  key={tab.id}
-                  id={`mobile-tab-btn-${tab.id}`}
-                  onClick={() => {
-                    handleTabChange(tab.id as AppTab);
-                    setMobileMenuOpen(false);
-                  }}
-                  className={`py-3 text-left px-4 rounded-lg text-xs font-semibold tracking-wider uppercase transition-all duration-150 ${
-                    activeTab === tab.id 
-                      ? 'bg-[#faf8f4] text-[#00876e] border-l-4 border-[#00876e]' 
-                      : 'text-[#6e7776] hover:bg-gray-50'
-                  }`}
-                >
-                  {tab.label}
-                </button>
-              ))}
+              {/* Mobile menu items */}
+              <button
+                onClick={() => { handleTabChange('home'); setMobileMenuOpen(false); }}
+                className="w-full py-3 px-4 text-left text-xs font-semibold tracking-wider uppercase transition-all duration-150 text-[#6F685F] hover:bg-[#F7F4EE] hover:text-[#1E2B16] rounded-lg"
+              >
+                Home
+              </button>
+
+              <MobileCollapsibleMenuItem 
+                label="About Us" 
+                items={[
+                  { label: 'About', action: () => { handleTabChange('about'); setMobileMenuOpen(false); }},
+                  { label: 'Awards & Recognition', action: () => { handleTabChange('awards'); setMobileMenuOpen(false); }},
+                  { label: 'Community Initiatives', action: () => { handleTabChange('community'); setMobileMenuOpen(false); }},
+                  { label: 'Glossary of Fragrance Terms', action: () => { handleTabChange('glossary'); setMobileMenuOpen(false); }},
+                  { label: 'Frequently Asked Questions', action: () => { handleTabChange('faq'); setMobileMenuOpen(false); }}
+                ]}
+              />
+
+              <MobileCollapsibleMenuItem
+                label="Fragrance Oil Creation"
+                items={[
+                  { label: 'Our Fragrance Oil Collections', action: () => { handleTabChange('collections'); setMobileMenuOpen(false); }},
+                  { label: 'Fragrance Regulation and Compliance', action: () => { handleTabChange('regulation'); setMobileMenuOpen(false); }},
+                  { label: 'Our Technical Expertise', action: () => { handleTabChange('about'); setMobileMenuOpen(false); }},
+                  { label: 'Guide to Fragrances', action: () => { handleTabChange('guide'); setMobileMenuOpen(false); }},
+                  { label: 'Fragrance Application Samples', action: () => { handleTabChange('samples'); setMobileMenuOpen(false); }}
+                ]}
+              />
+
+              <MobileCollapsibleMenuItem
+                label="Fragrance Applications"
+                items={[
+                  { label: 'Perfume & Fine Fragrance', action: () => { handleTabChange('applications'); setMobileMenuOpen(false); }},
+                  { label: 'Personal Care & Beauty', action: () => { handleTabChange('personal-care'); setMobileMenuOpen(false); }},
+                  { label: 'Home Care & Cleaning', action: () => { handleTabChange('home-care'); setMobileMenuOpen(false); }},
+                  { label: 'Room & Candles Fragrances', action: () => { handleTabChange('room-candles'); setMobileMenuOpen(false); }},
+                  { label: 'Car Care Fragrances', action: () => { handleTabChange('applications'); setMobileMenuOpen(false); }},
+                  { label: 'Flavours', action: () => { handleTabChange('applications'); setMobileMenuOpen(false); }}
+                ]}
+              />
+
+              <button
+                onClick={() => { handleTabChange('blog'); setMobileMenuOpen(false); }}
+                className="w-full py-3 px-4 text-left text-xs font-semibold tracking-wider uppercase transition-all duration-150 text-[#6F685F] hover:bg-[#F7F4EE] hover:text-[#1E2B16] rounded-lg"
+              >
+                Blog
+              </button>
+
+              <MobileCollapsibleMenuItem
+                label="Contact Us"
+                items={[
+                  { label: 'Inquiry', action: () => { handleTabChange('contact'); setMobileMenuOpen(false); }},
+                  { label: 'Careers', action: () => { handleTabChange('careers'); setMobileMenuOpen(false); }}
+                ]}
+              />
               
               {/* Mobile CTA removed */}
             </motion.div>
@@ -237,45 +311,88 @@ export default function App() {
           
           {activeTab === 'home' && (
             <HomeTab 
-              setActiveTab={setActiveTab} 
+              setActiveTab={handleTabChange} 
               setSelectedBlog={setSelectedBlog} 
             />
           )}
 
           {activeTab === 'about' && (
             <AboutTab 
-              setActiveTab={setActiveTab}
+              setActiveTab={handleTabChange}
               activeHeritageTab={activeHeritageTab}
               setActiveHeritageTab={setActiveHeritageTab}
             />
           )}
 
           {activeTab === 'awards' && (
-            <AwardsRecognition setActiveTab={setActiveTab} />
+            <AwardsRecognition setActiveTab={handleTabChange} />
           )}
 
           {activeTab === 'community' && (
-            <CommunityInitiatives setActiveTab={setActiveTab} />
+            <CommunityInitiatives setActiveTab={handleTabChange} />
           )}
 
           {activeTab === 'applications' && (
             <ApplicationsTab 
-              setActiveTab={setActiveTab} 
+              setActiveTab={handleTabChange} 
             />
+          )}
+
+          {activeTab === 'collections' && (
+            <FragranceCollectionsTab setActiveTab={handleTabChange} />
+          )}
+
+          {activeTab === 'regulation' && (
+            <RegulationComplianceTab setActiveTab={handleTabChange} />
+          )}
+
+          {activeTab === 'guide' && (
+            <GuideTab setActiveTab={handleTabChange} />
+          )}
+
+          {activeTab === 'samples' && (
+            <SamplesTab setActiveTab={handleTabChange} />
+          )}
+
+          {activeTab === 'glossary' && (
+            <GlossaryTab setActiveTab={handleTabChange} />
+          )}
+
+          {activeTab === 'faq' && (
+            <FaqTab setActiveTab={handleTabChange} />
+          )}
+
+          {activeTab === 'home-care' && (
+            <HomeCareTab setActiveTab={handleTabChange} />
+          )}
+
+          {activeTab === 'personal-care' && (
+            <PersonalCareTab setActiveTab={handleTabChange} />
+          )}
+
+          {activeTab === 'room-candles' && (
+            <RoomCandlesTab setActiveTab={handleTabChange} />
           )}
 
           {activeTab === 'blog' && (
             <BlogTab 
-              setActiveTab={setActiveTab}
+              setActiveTab={handleTabChange}
               selectedBlog={selectedBlog}
               setSelectedBlog={setSelectedBlog}
+              previousActiveTab={previousActiveTab}
             />
           )}
 
           {activeTab === 'contact' && (
             <ContactTab 
-              setActiveTab={setActiveTab}
+              setActiveTab={handleTabChange}
               setActiveHeritageTab={setActiveHeritageTab}
+            />
+          )}
+
+          {activeTab === 'careers' && (
+            <CareersTab 
+              setActiveTab={handleTabChange}
             />
           )}
 
@@ -283,31 +400,30 @@ export default function App() {
       </main>
 
       {/* FOOTER AREA */}
-      <footer className="bg-[#0b1c19] text-gray-300 mt-12 py-14 border-t-2 border-[#b38b4d]/20 relative overflow-hidden">
+      <footer className="bg-[#13200F] text-[#D2DCD0] mt-12 py-16 md:py-20 border-t-2 border-[#9E7A3D]/20 relative overflow-hidden">
         {/* Subtle decorative gold leaf border or subtle top line */}
-        <div className="absolute top-0 left-0 right-0 h-0.5 bg-gradient-to-r from-transparent via-[#b38b4d]/30 to-transparent" />
+        <div className="absolute top-0 left-0 right-0 h-0.5 bg-gradient-to-r from-transparent via-[#9E7A3D]/30 to-transparent" />
         
-        <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-12 gap-10 text-xs">
+        <div className="w-full max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 grid grid-cols-1 md:grid-cols-12 gap-10 md:gap-12">
           
-          {/* Brand info */}
-          <div className="md:col-span-5 space-y-5">
+          {/* Column 1: Brand Info */}
+          <div className="md:col-span-12 lg:col-span-5 space-y-6">
             <div className="flex items-center gap-3">
-              <div className="h-10 w-10 flex items-center justify-center bg-[#004d44] text-[#faf8f4] font-serif font-bold text-base p-1 rounded border border-[#00876e]/20">
-                C
-              </div>
-              <span className="font-serif text-lg font-bold tracking-tight text-white uppercase">
-                Proessences
-              </span>
+              <img 
+                src={ProessencesLogoWithTextSide} 
+                alt="Proessences Logo" 
+                className="h-16 w-auto object-contain" 
+              />
             </div>
-            <p className="text-gray-400 leading-relaxed text-[12px] max-w-sm font-light">
-              Proessences is a global perfume and fragrance base manufacturer creating high-quality bespoke fragrance compounds and essential oils since 1941. We serve diverse client products in home, beauty, personal care, and industrial sectors worldwide.
+            <p className="text-[#D2DCD0]/90 leading-relaxed text-sm max-w-md font-light">
+              Proessences, Inc. is a leading supplier and distributor of fragrances, perfumes, basic aroma chemicals and natural essential oils in the Philippines for CARVANSONS, UK. Since our establishment, we are constantly in pursue of product excellence to create best-selling solutions for our customers.
             </p>
           </div>
 
-          {/* Useful links columns */}
-          <div className="md:col-span-3 space-y-4">
-            <span className="block font-serif text-sm font-semibold tracking-wide text-white uppercase">Olfactive Portfolio</span>
-            <div className="flex flex-col gap-2.5 text-gray-400 text-[12px]">
+          {/* Column 2: Olfactive Portfolio */}
+          <div className="md:col-span-6 lg:col-span-3 space-y-5">
+            <span className="block font-serif text-sm font-semibold tracking-wider text-[#D1B37A] uppercase">Olfactive Portfolio</span>
+            <div className="flex flex-col gap-3 text-sm">
               {[
                 { label: 'Fine Fragrances', tab: 'applications' },
                 { label: 'Ambient Home Scenting', tab: 'applications' },
@@ -322,7 +438,7 @@ export default function App() {
                     handleTabChange(link.tab as AppTab);
                     setSelectedBlog(null);
                   }}
-                  className="text-left hover:text-white hover:underline p-0.5 transition-colors cursor-pointer bg-transparent border-none text-gray-400 font-light"
+                  className="text-left transition-colors duration-150 cursor-pointer bg-transparent border-none text-[#D2DCD0] hover:text-[#FCFBF8] hover:underline font-light w-fit"
                 >
                   {link.label}
                 </button>
@@ -330,34 +446,59 @@ export default function App() {
             </div>
           </div>
 
-          {/* Legal and Registration */}
-          <div className="md:col-span-4 space-y-4">
-            <span className="block font-serif text-sm font-semibold tracking-wide text-[#c4a46c] uppercase">Corporate HQ</span>
-            <p className="text-gray-400 font-mono leading-relaxed text-[11px] font-light">
-              <strong className="text-gray-350">Proessences Ltd</strong><br />
-              Knowsley Park Way,<br />
-              Knowsley Road Industrial Estate,<br />
-              Haslingden, Rossendale, Lancashire,<br />
-              BB4 4RS, United Kingdom.<br />
-              <span className="inline-block mt-2">Phone: +44 161 766 3768</span>
-            </p>
+          {/* Column 3: Contact & Office */}
+          <div className="md:col-span-6 lg:col-span-4 space-y-5">
+            <span className="block font-[#D1B37A] text-sm font-semibold tracking-wider text-[#D1B37A] uppercase">Office & Contacts</span>
+            <div className="text-[#D2DCD0] font-sans leading-relaxed text-sm font-light space-y-3">
+              <p>
+                <strong className="text-[#FCFBF8]">Proessences Inc.</strong><br />
+                10 Neptune Street Bahay Toro, Quezon City 1106, Second District, Philippines.
+              </p>
+              <div className="space-y-1.5 text-[13px] text-[#D2DCD0]/80 font-mono leading-relaxed pt-1">
+                <div>Landline: (02) 8920-9848 / (02) 8920-9735</div>
+                <div>CP/WhatsApp: 0918-9859643</div>
+                <div>Email: gemma@proessences.com</div>
+              </div>
+              <div className="flex gap-4.5 pt-2">
+                <a 
+                  href="https://www.instagram.com/proessencesinc" 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  className="text-[#D2DCD0] hover:text-[#FCFBF8] transition-colors duration-150 p-1 bg-white/5 rounded-full hover:bg-white/10"
+                  aria-label="Instagram Link"
+                >
+                  <Instagram className="w-5 h-5" />
+                </a>
+                <a 
+                  href="https://www.facebook.com/share/1BFqGReRHW/" 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  className="text-[#D2DCD0] hover:text-[#FCFBF8] transition-colors duration-150 p-1 bg-white/5 rounded-full hover:bg-white/10"
+                  aria-label="Facebook Link"
+                >
+                  <Facebook className="w-5 h-5" />
+                </a>
+              </div>
+            </div>
           </div>
 
         </div>
 
         {/* Bottom bar */}
-        <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-10 pt-8 border-t border-white/5 flex flex-col sm:flex-row items-center justify-between gap-4 text-[11px] text-gray-500 font-mono">
-          <div>
-            © {new Date().getFullYear()} Proessences Ltd. Registered in England & Wales Reg No: 08656189. All rights reserved.
+        <div className="w-full max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 mt-12 pt-8 border-t border-white/5 grid grid-cols-1 md:grid-cols-3 items-center gap-4 text-xs text-[#7C8C6A] font-mono">
+          <div className="text-center md:text-left">
+            © {new Date().getFullYear()} Proessences Ltd. All rights reserved.
           </div>
-          <div className="flex gap-4">
-            <a href="#" className="hover:text-white transition-colors">Terms & Conditions</a>
-            <span>|</span>
-            <span onClick={() => { handleTabChange('contact'); }} className="hover:text-white transition-colors cursor-pointer">Local Distribution Map</span>
+          <div className="text-center md:text-center text-[#748762]">
+            Made by <span className="text-[#a4b494] hover:text-[#FCFBF8] transition-colors duration-150">DevCAD Solutions</span>
+          </div>
+          <div className="text-center md:text-right">
+            <a href="#" className="hover:text-[#FCFBF8] transition-colors duration-150">Terms & Conditions</a>
           </div>
         </div>
       </footer>
 
+      <Chatbot />
     </div>
   );
 }
