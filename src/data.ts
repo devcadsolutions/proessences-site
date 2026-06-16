@@ -378,7 +378,7 @@ Whether you are looking to design a signature scent for premium cosmetics, luxur
 • Green Science & Sustainable Scent Development Consultations
 
 We invite all beauty brand owners, cosmetic chemists, and product developers to visit us. Stay tuned for further updates as we count down to the trade event of the season!`,
-    image: '/news/06-26/cosmobeaute_poster.jpg',
+    image: '/cosmobeaute-exhibition-2025/certification/web-assets/06-26/cosmobeaute_poster.jpg',
     date: 'June 2026',
     readTime: '3 min read'
   },
@@ -395,7 +395,7 @@ This year has been defined by incredible milestones, creative exhibition accolad
 To commemorate this special season, we invite you to view our special holiday greeting video. We are truly appreciative of the opportunity to be your local scent solutions partner.
 
 Wishing you a restful holiday season, a Merry Christmas, and a prosperous, beautifully scented New Year!`,
-    image: '/news/06-26/cosmobeaute_poster.jpg',
+    image: '/cosmobeaute-exhibition-2025/certification/web-assets/06-26/cosmobeaute_poster.jpg',
     date: 'December 2025',
     readTime: '2 min read',
     video: '/christmas-greetings.mp4',

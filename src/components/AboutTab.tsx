@@ -323,9 +323,9 @@ export default function AboutTab({ setActiveTab, activeHeritageTab, setActiveHer
             {/* Certifications badges column */}
             <div className="md:col-span-5 grid grid-cols-3 gap-4 items-center justify-center justify-items-center bg-[#EFF1ED]/30 p-6 rounded-lg border border-[#E6E0D6]">
               {[
-                { title: 'BSOP', src: '/images/certification/bsop.jpg' },
-                { title: 'Halal', src: '/images/certification/halal.jpg' },
-                { title: 'NFRA', src: '/images/certification/nfra-logo.jpg' }
+                { title: 'BSOP', src: '/cosmobeaute-exhibition-2025/certification/bsop.jpg' },
+                { title: 'Halal', src: '/cosmobeaute-exhibition-2025/certification/halal.jpg' },
+                { title: 'NFRA', src: '/cosmobeaute-exhibition-2025/certification/nfra-logo.jpg' }
               ].map((badge, idx) => (
                 <div key={idx} className="flex flex-col items-center group text-center">
                   <div className="w-20 h-20 flex items-center justify-center p-1 transition-transform duration-300 group-hover:scale-105">

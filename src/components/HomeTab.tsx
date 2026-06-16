@@ -478,19 +478,19 @@ export default function HomeTab({ setActiveTab, setSelectedBlog }: HomeTabProps)
                   category: 'HALAL CERTIFICATION',
                   title: 'Verified Manufacturing Standards',
                   desc: 'Production processes reviewed against recognized halal manufacturing requirements.',
-                  image: '/images/certification/halal.jpg',
+                  image: '/cosmobeaute-exhibition-2025/certification/halal.jpg',
                 },
                 {
                   category: 'INDUSTRY AFFILIATION',
                   title: 'BSOP Formulation Member',
                   desc: 'Connected with professional fragrance formulation and perfumery industry networks.',
-                  image: '/images/certification/bsop.jpg',
+                  image: '/cosmobeaute-exhibition-2025/certification/bsop.jpg',
                 },
                 {
                   category: 'REGULATORY ALIGNMENT',
                   title: 'IFRA Standards Compliance',
                   desc: 'Fragrance compounds developed with reference to applicable IFRA safety standards.',
-                  image: '/images/certification/nfra-logo.jpg',
+                  image: '/cosmobeaute-exhibition-2025/certification/nfra-logo.jpg',
                 }
               ].map((cert, idx) => (
                 <div 
