@@ -11,42 +11,11 @@ export default function CareersTab({ setActiveTab }: CareersTabProps) {
   const [applyForm, setApplyForm] = useState({
     name: '',
     email: '',
-    role: 'Laboratory Chemist',
+    role: 'General CV Submission',
     portfolio: '',
     coverLetter: ''
   });
   const [success, setSuccess] = useState(false);
-
-  const rolesList = [
-    {
-      title: 'Senior Perfumer / Olfactive Designer',
-      department: 'Research & Olfactive Arts',
-      location: 'Technical HQ - Quezon City',
-      type: 'Full-time',
-      desc: 'Formulate bespoke fragrance compounds across fine perfumery, personal cosmetics, and home care applications. Bring 8+ years of expert GC-MS analysis, safety rule compliance, and raw chemical design mastery.',
-    },
-    {
-      title: 'QC Laboratory Chemist',
-      department: 'Quality Assurance & Science',
-      location: 'Technical HQ - Quezon City',
-      type: 'Full-time',
-      desc: 'Validate physical and chemical characteristics of all inbound and manufactured batches. Manage key equipment including densitometers, polarimeters, and refractive index monitors to secure absolute consistency.',
-    },
-    {
-      title: 'Regulatory Affairs & Documentation Specialist',
-      department: 'Global Safety & Compliance',
-      location: 'Technical HQ - Quezon City',
-      type: 'Full-time',
-      desc: 'Author SDS checklists and guarantee strict conformity to ASEAN Cosmetic Directive (ACD), IFRA limits, and safety standards. Guide international clients through raw ingredient validation procedures.',
-    },
-    {
-      title: 'B2B Fragrance Account Manager',
-      department: 'Corporate Sales & Partnerships',
-      location: 'Global Office - Quezon City',
-      type: 'Full-time',
-      desc: 'Establish powerful linkages with brand procurement officers, cosmetics product startups, and industrial chemists. Formulate professional corporate pitches and steer client compounding briefs.',
-    }
-  ];
 
   const handleApplySubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -57,7 +26,7 @@ export default function CareersTab({ setActiveTab }: CareersTabProps) {
     setApplyForm({
       name: '',
       email: '',
-      role: 'Laboratory Chemist',
+      role: 'General CV Submission',
       portfolio: '',
       coverLetter: ''
     });
@@ -104,7 +73,7 @@ export default function CareersTab({ setActiveTab }: CareersTabProps) {
               }}
               className="px-6 py-2.5 rounded-full bg-[#1E2B16] hover:bg-[#596E4E] text-white font-semibold text-xs tracking-wider uppercase transition-all duration-150 cursor-pointer shadow focus:outline-none"
             >
-              Explore Openings
+              Opportunities &amp; CV Submission
             </button>
             <button 
               onClick={() => {
@@ -189,55 +158,39 @@ export default function CareersTab({ setActiveTab }: CareersTabProps) {
           </div>
         </section>
 
-        {/* SECTION 2: OPENINGS LIST */}
+        {/* SECTION 2: OPENINGS LIST - REPLACED WITH GENERAL CV SUBMISSION NOTICE */}
         <section id="openings-section" className="space-y-10 scroll-mt-24">
           <div className="text-center max-w-xl mx-auto space-y-4">
-            <span className="text-[10px] uppercase font-mono font-bold tracking-widest text-[#596E4E] bg-[#EFF1ED] px-2 py-1 rounded inline-block">Active Openings</span>
-            <h2 className="font-serif text-2xl sm:text-3xl font-bold text-[#1E2B16]">Explore Available Positions</h2>
+            <span className="text-[10px] uppercase font-mono font-bold tracking-widest text-[#596E4E] bg-[#EFF1ED] px-2 py-1 rounded inline-block">Careers</span>
+            <h2 className="font-serif text-2xl sm:text-3xl font-bold text-[#1E2B16]">Join Our Talent Database</h2>
             <p className="text-gray-500 text-xs sm:text-sm font-light leading-relaxed">
-              We recruit globally minded thinkers, chemists, and commercial partners who hold a deep appreciation for the finer sensory details.
+              We do not have any specific open positions at this moment, but we are always eager to connect with passionate innovators, experienced chemists, and olfactive visionaries.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 gap-6 max-w-4xl mx-auto">
-            {rolesList.map((itm, idx) => (
-              <div 
-                key={idx}
-                className="bg-white border border-[#ece7de] rounded p-6 md:p-8 flex flex-col md:flex-row md:items-center justify-between gap-6 hover:border-[#6E968D] transition-colors duration-300 shadow-xs"
+          <div className="max-w-xl mx-auto bg-[#EFF1ED]/40 border border-[#ece7de] rounded-xl p-8 text-center space-y-5 shadow-xs">
+            <div className="w-12 h-12 rounded-full bg-[#1E2B16]/10 text-[#1E2B16] flex items-center justify-center mx-auto">
+              <Briefcase className="w-5 h-5" />
+            </div>
+            <div className="space-y-2">
+              <h3 className="font-serif text-lg font-normal text-[#1E2B16]">Submit Your Interest</h3>
+              <p className="text-gray-600 text-xs leading-relaxed font-light">
+                Feel free to share your curriculum vitae with us. We actively review general applications for future expansion, lab-scientist postings, and freelance olfactive briefs. You may submit your CV here using our portal below.
+              </p>
+            </div>
+            <div>
+              <button 
+                onClick={() => {
+                  const element = document.getElementById('apply-section');
+                  if (element) {
+                    element.scrollIntoView({ behavior: 'smooth' });
+                  }
+                }}
+                className="inline-flex items-center gap-1.5 px-6 py-2.5 bg-[#1E2B16] hover:bg-[#596E4E] text-white text-[11px] font-mono font-bold uppercase tracking-widest rounded-full transition-all duration-150 cursor-pointer focus:outline-none animate-pulse"
               >
-                <div className="space-y-3 text-left max-w-2xl">
-                  <div className="flex flex-wrap items-center gap-2">
-                    <span className="text-[9px] font-mono font-bold uppercase tracking-widest bg-gray-100 text-gray-500 px-2 py-0.5 rounded">
-                      {itm.department}
-                    </span>
-                    <span className="text-[9px] font-mono font-bold uppercase tracking-widest bg-[#EBF4F0] text-[#1E2B16] px-2 py-0.5 rounded">
-                      {itm.type}
-                    </span>
-                  </div>
-                  <h3 className="font-serif text-lg font-bold text-[#1E2B16]">
-                    {itm.title}
-                  </h3>
-                  <p className="text-gray-500 text-xs leading-relaxed font-light">
-                    {itm.desc}
-                  </p>
-                  <p className="text-[10px] text-gray-400 font-mono">
-                    📍 {itm.location}
-                  </p>
-                </div>
-                <div className="shrink-0 flex items-center">
-                  <button 
-                    onClick={() => {
-                      setApplyForm(prev => ({ ...prev, role: itm.title }));
-                      const element = document.getElementById('apply-section');
-                      if (element) element.scrollIntoView({ behavior: 'smooth' });
-                    }}
-                    className="inline-flex items-center gap-1.5 px-4 py-2 text-[10px] font-mono font-bold uppercase tracking-widest text-[#1E2B16] border border-[#1E2B16]/25 hover:border-[#1E2B16] rounded transition-all duration-150 cursor-pointer focus:outline-none"
-                  >
-                    Apply Now <ArrowRight className="w-3.5 h-3.5" />
-                  </button>
-                </div>
-              </div>
-            ))}
+                Submit Your CV Here <ArrowRight className="w-3.5 h-3.5" />
+              </button>
+            </div>
           </div>
         </section>
 
@@ -274,7 +227,7 @@ export default function CareersTab({ setActiveTab }: CareersTabProps) {
           ) : (
             <form onSubmit={handleApplySubmit} className="space-y-5 text-left">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <div className="space-y-1.5ClassName">
+                <div className="space-y-1.5">
                   <label htmlFor="appl-name" className="text-[10px] uppercase font-mono font-bold tracking-widest text-[#1E2B16] block">Full Name:</label>
                   <div className="relative">
                     <User className="absolute left-3 top-2.5 w-4 h-4 text-gray-400" />
@@ -316,11 +269,11 @@ export default function CareersTab({ setActiveTab }: CareersTabProps) {
                     onChange={(e) => setApplyForm({ ...applyForm, role: e.target.value })}
                     className="w-full px-4 py-2 bg-white border border-[#ece7de] text-xs rounded focus:outline-none"
                   >
-                    <option value="Senior Perfumer">Senior Perfumer / Olfactive Designer</option>
-                    <option value="Laboratory Chemist">QC Laboratory Chemist</option>
-                    <option value="Regulatory Specialist">Regulatory Affairs & Documentation Specialist</option>
-                    <option value="B2B Account Manager">B2B Fragrance Account Manager</option>
-                    <option value="General Internship">General Laboratory Internship</option>
+                    <option value="General CV Submission">General CV Submission</option>
+                    <option value="Research &amp; Formulation Chemistry">Research &amp; Formulation Chemistry</option>
+                    <option value="Regulatory Affairs &amp; Safety Compliance">Regulatory Affairs &amp; Safety Compliance</option>
+                    <option value="B2B Account Management &amp; Partnerships">B2B Account Management &amp; Partnerships</option>
+                    <option value="General Industrial Internship">General Industrial Internship</option>
                   </select>
                 </div>
 

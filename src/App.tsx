@@ -19,6 +19,7 @@ import FragranceCollectionsTab from './components/FragranceCollectionsTab';
 import RegulationComplianceTab from './components/RegulationComplianceTab';
 import GuideTab from './components/GuideTab';
 import SamplesTab from './components/SamplesTab';
+import TechnicalExpertiseTab from './components/TechnicalExpertiseTab';
 import AwardsRecognition from './components/AwardsRecognition';
 import CommunityInitiatives from './components/CommunityInitiatives';
 import PremiumDropdown from './components/PremiumDropdown';
@@ -30,6 +31,8 @@ import Chatbot from './components/Chatbot';
 import PersonalCareTab from './components/PersonalCareTab';
 import RoomCandlesTab from './components/RoomCandlesTab';
 import CareersTab from './components/CareersTab';
+import CarCareTab from './components/CarCareTab';
+import FineFragranceTab from './components/FineFragranceTab';
 
 export default function App() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -41,11 +44,44 @@ export default function App() {
   const [hasApiKey, setHasApiKey] = useState<boolean | null>(null);
   const [previousActiveTab, setPreviousActiveTab] = useState<AppTab | null>(null);
 
+  // Sync activeTab with URL Hash to support working native Back/Forward buttons
+  useEffect(() => {
+    const validTabs: AppTab[] = [
+      'home', 'about', 'applications', 'blog', 'contact', 'glossary', 'faq', 
+      'home-care', 'collections', 'regulation', 'guide', 'samples', 'awards', 
+      'community', 'personal-care', 'room-candles', 'careers', 'car-care', 'fine-fragrance'
+    ];
+
+    const handleHashChange = () => {
+      const hash = window.location.hash.replace('#', '') as AppTab;
+      if (hash && validTabs.includes(hash)) {
+        setActiveTab(hash);
+      }
+    };
+
+    window.addEventListener('hashchange', handleHashChange);
+    
+    // Initial load check
+    const initialHash = window.location.hash.replace('#', '') as AppTab;
+    if (initialHash && validTabs.includes(initialHash)) {
+      setActiveTab(initialHash);
+    } else {
+      window.location.hash = 'home';
+    }
+
+    return () => window.removeEventListener('hashchange', handleHashChange);
+  }, []);
+
   // Manage tab switching with a small delay for perceived performance
   const handleTabChange = (tab: AppTab) => {
     setIsLoading(true);
     setPreviousActiveTab(activeTab);
     setActiveTab(tab);
+    
+    if (window.location.hash.replace('#', '') !== tab) {
+      window.location.hash = tab;
+    }
+
     window.scrollTo({ top: 0, behavior: 'instant' });
     setTimeout(() => setIsLoading(false), 500); // 500ms min loading time
   };
@@ -73,7 +109,7 @@ export default function App() {
       });
   }, []);
 
-  const isHeaderSolid = isScrolled || (activeTab === 'blog' && selectedBlog !== null);
+  const isHeaderSolid = isScrolled || mobileMenuOpen || (activeTab === 'blog' && selectedBlog !== null);
 
   return (
     <div className="min-h-screen bg-[#FCFBF8] flex flex-col font-sans antialiased text-[#6F685F]">
@@ -152,7 +188,7 @@ export default function App() {
               onSelect={(item) => {
                 if (item === 'Our Fragrance Oil Collections') handleTabChange('collections');
                 else if (item === 'Fragrance Regulation and Compliance') handleTabChange('regulation');
-                else if (item === 'Our Technical Expertise') handleTabChange('about');
+                else if (item === 'Our Technical Expertise') handleTabChange('expertise');
                 else if (item.startsWith('Natural Fragrances')) handleTabChange('guide');
                 else if (item === 'Fragrance Application Samples') handleTabChange('samples');
               }}
@@ -165,16 +201,18 @@ export default function App() {
                 'Home Care & Cleaning',
                 'Room & Candles Fragrances',
                 'Car Care Fragrances',
-                'Flavours'
+                'Flavours',
+                'All Categories'
               ]}
               isScrolled={isHeaderSolid}
               onSelect={(item) => {
-                if (item === 'Perfume & Fine Fragrance') handleTabChange('applications');
+                if (item === 'Perfume & Fine Fragrance') handleTabChange('fine-fragrance');
                 else if (item === 'Personal Care & Beauty') handleTabChange('personal-care');
                 else if (item === 'Home Care & Cleaning') handleTabChange('home-care');
                 else if (item === 'Room & Candles Fragrances') handleTabChange('room-candles');
-                else if (item === 'Car Care Fragrances') handleTabChange('applications');
+                else if (item === 'Car Care Fragrances') handleTabChange('car-care');
                 else if (item === 'Flavours') handleTabChange('applications');
+                else if (item === 'All Categories') handleTabChange('applications');
                 else handleTabChange('applications');
               }}
             />
@@ -240,7 +278,7 @@ export default function App() {
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -20 }}
               transition={{ duration: 0.2 }}
-              className="lg:hidden fixed top-[73px] left-0 right-0 bg-[#FCFBF8] border-b border-[#EEE8DD] shadow-lg z-40 p-4 flex flex-col gap-2.5"
+              className="lg:hidden fixed top-[108px] sm:top-[116px] left-0 right-0 bg-[#FCFBF8] border-b border-[#EEE8DD] shadow-lg z-40 p-4 flex flex-col gap-2.5 max-h-[calc(100vh-130px)] overflow-y-auto"
             >
               {/* Mobile menu items */}
               <button
@@ -266,7 +304,7 @@ export default function App() {
                 items={[
                   { label: 'Our Fragrance Oil Collections', action: () => { handleTabChange('collections'); setMobileMenuOpen(false); }},
                   { label: 'Fragrance Regulation and Compliance', action: () => { handleTabChange('regulation'); setMobileMenuOpen(false); }},
-                  { label: 'Our Technical Expertise', action: () => { handleTabChange('about'); setMobileMenuOpen(false); }},
+                  { label: 'Our Technical Expertise', action: () => { handleTabChange('expertise'); setMobileMenuOpen(false); }},
                   { label: 'Guide to Fragrances', action: () => { handleTabChange('guide'); setMobileMenuOpen(false); }},
                   { label: 'Fragrance Application Samples', action: () => { handleTabChange('samples'); setMobileMenuOpen(false); }}
                 ]}
@@ -275,12 +313,13 @@ export default function App() {
               <MobileCollapsibleMenuItem
                 label="Fragrance Applications"
                 items={[
-                  { label: 'Perfume & Fine Fragrance', action: () => { handleTabChange('applications'); setMobileMenuOpen(false); }},
+                  { label: 'Perfume & Fine Fragrance', action: () => { handleTabChange('fine-fragrance'); setMobileMenuOpen(false); }},
                   { label: 'Personal Care & Beauty', action: () => { handleTabChange('personal-care'); setMobileMenuOpen(false); }},
                   { label: 'Home Care & Cleaning', action: () => { handleTabChange('home-care'); setMobileMenuOpen(false); }},
                   { label: 'Room & Candles Fragrances', action: () => { handleTabChange('room-candles'); setMobileMenuOpen(false); }},
-                  { label: 'Car Care Fragrances', action: () => { handleTabChange('applications'); setMobileMenuOpen(false); }},
-                  { label: 'Flavours', action: () => { handleTabChange('applications'); setMobileMenuOpen(false); }}
+                  { label: 'Car Care Fragrances', action: () => { handleTabChange('car-care'); setMobileMenuOpen(false); }},
+                  { label: 'Flavours', action: () => { handleTabChange('applications'); setMobileMenuOpen(false); }},
+                  { label: 'All Categories', action: () => { handleTabChange('applications'); setMobileMenuOpen(false); }}
                 ]}
               />
 
@@ -346,6 +385,10 @@ export default function App() {
             <RegulationComplianceTab setActiveTab={handleTabChange} />
           )}
 
+          {activeTab === 'expertise' && (
+            <TechnicalExpertiseTab setActiveTab={handleTabChange} />
+          )}
+
           {activeTab === 'guide' && (
             <GuideTab setActiveTab={handleTabChange} />
           )}
@@ -372,6 +415,14 @@ export default function App() {
 
           {activeTab === 'room-candles' && (
             <RoomCandlesTab setActiveTab={handleTabChange} />
+          )}
+
+          {activeTab === 'car-care' && (
+            <CarCareTab setActiveTab={handleTabChange} />
+          )}
+
+          {activeTab === 'fine-fragrance' && (
+            <FineFragranceTab setActiveTab={handleTabChange} />
           )}
 
           {activeTab === 'blog' && (
@@ -425,11 +476,13 @@ export default function App() {
             <span className="block font-serif text-sm font-semibold tracking-wider text-[#D1B37A] uppercase">Olfactive Portfolio</span>
             <div className="flex flex-col gap-3 text-sm">
               {[
-                { label: 'Fine Fragrances', tab: 'applications' },
-                { label: 'Ambient Home Scenting', tab: 'applications' },
-                { label: 'Personal & Skincare', tab: 'applications' },
-                { label: 'Corporate Heritage', tab: 'about' },
-                { label: 'Global Network Map', tab: 'contact' }
+                { label: 'Perfume & Fine Fragrance', tab: 'fine-fragrance' },
+                { label: 'Personal Care & Beauty', tab: 'personal-care' },
+                { label: 'Home Care & Cleaning', tab: 'home-care' },
+                { label: 'Room & Candles Fragrances', tab: 'room-candles' },
+                { label: 'Car Care Fragrances', tab: 'car-care' },
+                { label: 'Flavours', tab: 'applications' },
+                { label: 'All Categories', tab: 'applications' }
               ].map((link, idx) => (
                 <button
                   key={idx}
@@ -452,7 +505,7 @@ export default function App() {
             <div className="text-[#D2DCD0] font-sans leading-relaxed text-sm font-light space-y-3">
               <p>
                 <strong className="text-[#FCFBF8]">Proessences Inc.</strong><br />
-                10 Neptune Street Bahay Toro, Quezon City 1106, Second District, Philippines.
+                10 Neptune St, Bahay Toro, Project 8, Quezon City, 1106 Metro Manila, Philippines.
               </p>
               <div className="space-y-1.5 text-[13px] text-[#D2DCD0]/80 font-mono leading-relaxed pt-1">
                 <div>Landline: (02) 8920-9848 / (02) 8920-9735</div>

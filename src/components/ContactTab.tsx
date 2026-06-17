@@ -36,6 +36,24 @@ export default function ContactTab({ setActiveTab, setActiveHeritageTab }: Conta
   const [contactSuccess, setContactSuccess] = useState(false);
   const [openFaq, setOpenFaq] = useState<number | null>(null);
 
+  React.useEffect(() => {
+    const selectedSamples = localStorage.getItem('selected_collection_samples');
+    if (selectedSamples) {
+      setContactForm(prev => ({
+        ...prev,
+        requirements: `Hi Proessences, I would like to request evaluation samples for the following fragrance collections:\n\n${selectedSamples}\n\nPlease let me know the process for testing and evaluation.`
+      }));
+      // Clear it so it doesn't persist on subsequent loads
+      localStorage.removeItem('selected_collection_samples');
+      
+      // Smooth scroll to the form section
+      setTimeout(() => {
+        const el = document.getElementById('inquiry-form-section');
+        if (el) el.scrollIntoView({ behavior: 'smooth' });
+      }, 300);
+    }
+  }, []);
+
   const handleContactSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     if (!contactForm.name || !contactForm.email || !contactForm.requirements) {
@@ -179,7 +197,7 @@ export default function ContactTab({ setActiveTab, setActiveHeritageTab }: Conta
                 Why Partner with Proessences?
               </h2>
               <p className="text-gray-600 text-sm font-light leading-relaxed">
-                As a leading premium fragrance and essential oil compounding provider, we collaborate closely with brands and manufacturing experts to secure seamless sensory matching and regulatory compliance.
+                As an exclusive distributor of premium fragrance and essential oil compounds, we collaborate closely with brands and manufacturing experts to secure seamless sensory matching and regulatory compliance.
               </p>
             </div>
 
@@ -356,7 +374,7 @@ export default function ContactTab({ setActiveTab, setActiveHeritageTab }: Conta
                   </div>
                   <div>
                     <span className="block font-bold text-gray-400 font-mono text-[9px] uppercase tracking-wider">Office Address:</span>
-                    <span className="text-[#1e2423] leading-relaxed">10 Neptune Street, Bahay Toro, Quezon City, Philippines</span>
+                    <span className="text-[#1e2423] leading-relaxed">10 Neptune St, Bahay Toro, Project 8, Quezon City, 1106 Metro Manila, Philippines</span>
                   </div>
                 </div>
 
@@ -413,7 +431,7 @@ export default function ContactTab({ setActiveTab, setActiveHeritageTab }: Conta
 
             <div className="bg-white border border-[#ece7de] rounded-2xl p-3 shadow-sm h-full min-h-[350px] overflow-hidden flex flex-col">
               <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3860.2977755358055!2d121.01824367584558!3d14.667439575440624!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3397b100bb7094bf%3A0xcfda1ae9284ffd2f!2s10%20Neptune%20St%2C%20Project%208%2C%20Quezon%20City%2C%201106%20Metro%20Manila!5e0!3m2!1sen!2sph!4v1700000000000!5m2!1sen!2sph"
+                src="https://maps.google.com/maps?q=PROESSENCES+INC.+OFFICE&z=17&output=embed"
                 width="100%"
                 height="100%"
                 style={{ border: 0, minHeight: '320px', borderRadius: '12px' }}
@@ -476,7 +494,7 @@ export default function ContactTab({ setActiveTab, setActiveHeritageTab }: Conta
         {/* SECTION 7: FINAL CALL-TO-ACTION */}
         <section className="relative rounded-3xl bg-[#1E2B16] text-white p-8 md:p-14 overflow-hidden text-center max-w-5xl mx-auto">
           {/* Subtle decoration lines */}
-          <div className="absolute inset-0 bg-cover bg-center opacity-[0.05]" style={{ backgroundImage: `url('https://images.unsplash.com/photo-1541643600914-78b084683601?auto=format&fit=crop&w=800&q=80')` }} />
+          <div className="absolute inset-0 bg-cover bg-center opacity-[0.05]" style={{ backgroundImage: `url('https://images.unsplash.com/photo-1615485290382-441e4d049cb5?auto=format&fit=crop&w=800&q=80')` }} />
           <div className="absolute top-0 bottom-0 left-0 right-0 bg-gradient-to-tr from-[#1E2B16] via-transparent to-black/30 pointer-events-none" />
 
           <div className="relative z-10 max-w-2xl mx-auto space-y-6">

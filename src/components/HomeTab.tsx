@@ -221,21 +221,21 @@ export default function HomeTab({ setActiveTab, setSelectedBlog }: HomeTabProps)
                   id: 'fine-fragrance', 
                   title: 'Perfume & Fine Fragrance', 
                   desc: 'Sophisticated formulas for luxury colognes, perfumes, and premium scent products.', 
-                  image: '/hero-section/essential-oil.png',
+                  image: '/website-assets/fine-fragrance.jpg',
                   tab: 'applications' as AppTab
                 },
                 { 
                   id: 'personal-care', 
                   title: 'Personal Care & Beauty', 
                   desc: 'Fragrance solutions for body care, skincare, soaps, and cosmetic products.', 
-                  image: '/hero-section/lemon-oil.png',
+                  image: '/website-assets/personal-care-beauty.jpg',
                   tab: 'personal-care' as AppTab
                 },
                 { 
                   id: 'room-candles', 
                   title: 'Room & Candles Fragrance', 
                   desc: 'Scent solutions for diffusers, room sprays, candles, and ambient spaces.', 
-                  image: '/hero-section/lavender-bottles.png',
+                  image: '/website-assets/room-fragrance.jpg',
                   tab: 'room-candles' as AppTab
                 }
               ].map((app) => (
@@ -337,7 +337,7 @@ export default function HomeTab({ setActiveTab, setSelectedBlog }: HomeTabProps)
                   title: 'Sample & Evaluate',
                   desc: 'Selected samples may be provided for internal testing and product assessment.',
                   localImage: '/process/Focused scientist in a modern lab.png',
-                  fallbackImage: 'https://images.unsplash.com/photo-1541643600914-78b084683601?auto=format&fit=crop&w=600&q=80'
+                  fallbackImage: 'https://images.unsplash.com/photo-1615485290382-441e4d049cb5?auto=format&fit=crop&w=600&q=80'
                 },
                 {
                   step: '04',
@@ -597,7 +597,7 @@ export default function HomeTab({ setActiveTab, setSelectedBlog }: HomeTabProps)
                   <div className="absolute inset-0 bg-[#1E2B16]/5 rounded blur-lg" />
                   <div className="relative bg-white p-3 rounded-lg border border-[#EEE8DD] shadow-sm hover:shadow-md transition-shadow">
                     <img 
-                      src="https://images.unsplash.com/photo-1547841243-eacb14453cd9?auto=format&fit=crop&w=800&h=450&q=80" 
+                      src="/collections/2026-2027-spring-summer-trend-800x450.jpg" 
                       alt="SS Fragrance Trend Report" 
                       className="rounded w-full h-auto object-cover border border-[#EEE8DD]"
                       referrerPolicy="no-referrer"
@@ -630,7 +630,7 @@ export default function HomeTab({ setActiveTab, setSelectedBlog }: HomeTabProps)
                 <h3 className="font-serif text-3xl font-normal tracking-tight text-[#1E2B16]">
                   Selected Blog Insights
                 </h3>
-                <p className="text-[#6F685F] text-sm md:text-base font-light">Recent industry articles, chemical updates, and collection launches from our laboratory.</p>
+                <p className="text-[#6F685F] text-sm md:text-base font-light">Recent industry articles, chemical updates, and brand collection launches.</p>
               </div>
               <button 
                 id="blog-view-all"
@@ -764,15 +764,15 @@ export default function HomeTab({ setActiveTab, setSelectedBlog }: HomeTabProps)
         >
           <div className="max-w-5xl mx-auto px-6">
             <div className="relative rounded-2xl overflow-hidden bg-[#1E2B16] text-[#FCFBF8] py-12 md:py-20 px-8 md:px-16 text-center space-y-6 shadow-md border border-[#1E2B16]/20">
-              <div className="absolute inset-0 opacity-[0.03]" style={{ backgroundImage: "url('https://images.unsplash.com/photo-1541643600914-78b084683601?auto=format&fit=crop&w=40&q=40')" }} />
+              <div className="absolute inset-0 opacity-[0.03]" style={{ backgroundImage: "url('https://images.unsplash.com/photo-1615485290382-441e4d049cb5?auto=format&fit=crop&w=40&q=40')" }} />
               
               <div className="relative z-10 max-w-2xl mx-auto space-y-4">
-                <span className="text-xs uppercase font-mono tracking-widest text-[#D1B37A] font-bold block">Bespoke Compounding</span>
+                <span className="text-xs uppercase font-mono tracking-widest text-[#D1B37A] font-bold block">Exclusive Partnership</span>
                 <h2 className="font-serif text-3xl sm:text-4xl md:text-[40px] font-normal leading-tight text-white tracking-tight">
                   Ready to develop your signature product?
                 </h2>
                 <p className="text-[#D2DCD0] text-sm md:text-base font-light leading-relaxed max-w-sm mx-auto">
-                  Our raw compounding specialists and account partners are ready to guide your formulation. Schedule a consultation callback.
+                  Our dedicated account partners and fragrance advisors are ready to guide your selection. Schedule a consultation callback.
                 </p>
                 <div className="pt-6">
                   <button

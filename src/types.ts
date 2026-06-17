@@ -1,4 +1,4 @@
-export type AppTab = 'home' | 'about' | 'applications' | 'blog' | 'contact' | 'awards' | 'community' | 'collections' | 'regulation' | 'guide' | 'samples' | 'glossary' | 'faq' | 'home-care' | 'personal-care' | 'room-candles' | 'careers';
+export type AppTab = 'home' | 'about' | 'applications' | 'blog' | 'contact' | 'awards' | 'community' | 'collections' | 'regulation' | 'guide' | 'samples' | 'glossary' | 'faq' | 'home-care' | 'personal-care' | 'room-candles' | 'careers' | 'expertise' | 'car-care' | 'fine-fragrance';
 
 export interface ScentBriefInput {
   productFormat: string;

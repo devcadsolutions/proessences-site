@@ -54,7 +54,7 @@ export default function GuideTab({ setActiveTab }: TabProps) {
           <div className="lg:col-span-6 bg-white rounded-2xl border border-[#E6E0D6] p-6 flex flex-col justify-between space-y-6 shadow-xs">
             <div className="relative w-full rounded-xl overflow-hidden aspect-[16/10] border border-[#E6E0D6]">
               <img 
-                src="https://images.unsplash.com/photo-1512290923902-8a9f81dc236c?auto=format&fit=crop&w=1000&q=80" 
+                src="https://images.unsplash.com/photo-1620916566398-39f1143ab7be?auto=format&fit=crop&w=1000&q=80" 
                 alt="Aroma vials and scent strips arranged minimalist on desk" 
                 className="w-full h-full object-cover"
                 referrerPolicy="no-referrer"
@@ -173,7 +173,7 @@ export default function GuideTab({ setActiveTab }: TabProps) {
             
             <div className="lg:col-span-5 relative min-h-[300px] bg-gray-50 flex items-stretch">
               <img 
-                src="https://images.unsplash.com/photo-1616949755610-8c9bbc08f138?auto=format&fit=crop&w=1000&q=80" 
+                src="https://images.unsplash.com/photo-1615485290382-441e4d049cb5?auto=format&fit=crop&w=1000&q=80" 
                 alt="Aesthetic unbranded fragrance bottles in a clean studio setting" 
                 className="w-full h-full object-cover min-h-[320px] lg:absolute lg:inset-0"
                 referrerPolicy="no-referrer"

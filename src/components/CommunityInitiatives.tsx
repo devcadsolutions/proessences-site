@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { motion } from 'motion/react';
 import { AppTab } from '../types';
 import { X } from 'lucide-react';
+import SubpageHeader from './SubpageHeader';
 
 interface CommunityInitiativesProps {
   setActiveTab: (tab: AppTab) => void;
@@ -45,26 +46,12 @@ export default function CommunityInitiatives({ setActiveTab }: CommunityInitiati
       )}
 
       {/* COMPACT SUBPAGE HEADER BAR */}
-      <section 
-        className="relative w-full bg-cover bg-center py-20 md:py-32 overflow-hidden text-white"
-        style={{ backgroundImage: `url('/03-2024_ccip_womensmonth/womens-month (3).jpg')` }}
-      >
-        <div className="absolute inset-0 bg-gradient-to-r from-[#13200F]/95 via-[#1E2E1A]/85 to-transparent" />
-        
-        <div className="relative z-10 w-full max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 text-left space-y-5">
-          <div className="inline-flex items-center gap-2 bg-[#b38b4d]/10 border border-[#b38b4d]/25 text-[#ebd9bd] text-[10px] font-mono tracking-widest uppercase px-3.5 py-1 rounded-full backdrop-blur-xs">
-            <span className="w-1.5 h-1.5 rounded-full bg-[#ebd9bd] animate-pulse" /> Community Engagement
-          </div>
-          
-          <h1 className="font-serif text-3xl sm:text-4xl md:text-5.5xl font-normal leading-tight tracking-tight text-[#faf8f5]">
-            Community <span className="font-serif italic text-[#ebd9bd]">Initiatives.</span>
-          </h1>
-
-          <p className="text-gray-300 text-xs sm:text-sm max-w-xl leading-relaxed font-light">
-            Supporting meaningful programs that encourage education, collaboration, responsible business practices, and community engagement.
-          </p>
-        </div>
-      </section>
+      <SubpageHeader
+        category="Community Engagement"
+        title="Community"
+        subtitle="Initiatives."
+        backgroundImage="https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?auto=format&fit=crop&w=1920&q=85"
+      />
 
       <div className="max-w-4xl mx-auto px-6 lg:px-12 py-16 md:py-24 space-y-16">
         <motion.section 

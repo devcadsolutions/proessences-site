@@ -139,29 +139,6 @@ export default function AwardsRecognition({ setActiveTab }: AwardsRecognitionPro
           </div>
         </motion.section>
 
-        <motion.section
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="text-left"
-        >
-          <h2 className="font-serif text-2xl font-bold text-[#1E2B16] mb-8">Ongoing Quality Standards</h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <div className="border border-[#E6E0D6] rounded p-6 bg-white space-y-2 shadow-sm">
-              <h4 className="font-bold text-xs uppercase tracking-wider text-[#1e2b16]">Standard Compliance</h4>
-              <p className="text-gray-500 text-xs font-light leading-relaxed">Direct support under IFRA and international safety standards for cosmetics and home applications.</p>
-            </div>
-            <div className="border border-[#E6E0D6] rounded p-6 bg-white space-y-2 shadow-sm">
-              <h4 className="font-bold text-xs uppercase tracking-wider text-[#1e2b16]">Corporate Collaboration</h4>
-              <p className="text-gray-500 text-xs font-light leading-relaxed">Active regional partnership with CCIP, organizing educational events and technical workshops.</p>
-            </div>
-            <div className="border border-[#E6E0D6] rounded p-6 bg-white space-y-2 shadow-sm">
-              <h4 className="font-bold text-xs uppercase tracking-wider text-[#1e2b16]">Creative Innovation</h4>
-              <p className="text-gray-500 text-xs font-light leading-relaxed">Pioneering sensory experiences and sustainable layout designs recognized across national exhibitions.</p>
-            </div>
-          </div>
-        </motion.section>
-
         <div className="text-center pt-12 border-t border-[#E6E0D6]">
           <p className="text-lg text-[#1E2B16] font-medium mb-8">Partner with a fragrance supplier committed to creativity and industry excellence.</p>
           <button 

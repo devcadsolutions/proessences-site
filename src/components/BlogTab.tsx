@@ -360,22 +360,11 @@ export default function BlogTab({ setActiveTab, selectedBlog, setSelectedBlog, p
             category="Scent Intelligence & Forecasts"
             title="Olfactive Insights &"
             subtitle="Market Intelligence."
-            backgroundImage="https://images.unsplash.com/photo-1512290923902-8a9f81dc236c?auto=format&fit=crop&w=1920&q=85"
+            backgroundImage="https://images.unsplash.com/photo-1616949755610-8c9bbc08f138?auto=format&fit=crop&w=1920&q=85"
           />
 
           {/* SCROLLABLE MAIN FEED */}
           <div id="blog-content" className="w-full max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 py-16 md:py-24 space-y-16">
-
-            {/* Intro summary banner */}
-            <section className="bg-white rounded border border-[#ece7de] p-8 md:p-12 space-y-4 max-w-4xl mx-auto text-center">
-              <span className="text-[10px] uppercase font-mono font-bold tracking-widest text-[#596E4E] block">Chemical Analysis Diary</span>
-              <h2 className="font-serif text-2xl md:text-3xl text-[#1E2B16] font-normal tracking-tight">
-                A Comprehensive View of Modern Scent Development
-              </h2>
-              <p className="text-[#4e5554] text-xs sm:text-sm leading-relaxed font-light max-w-2xl mx-auto">
-                Discover the raw botanical extractions, chemical formulation standards, and commercial perfume trajectories shaping global markets through our collaborative network.
-              </p>
-            </section>
 
             {/* Categories Navigation Tab Row */}
             <div className="flex flex-wrap justify-center border-b border-[#ece7de] pb-6 gap-2">

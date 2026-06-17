@@ -115,7 +115,7 @@ export default function AboutTab({ setActiveTab, activeHeritageTab, setActiveHer
         category="Corporate Heritage & Innovation"
         title="Corporate History &"
         subtitle="Perfumer Customization."
-        backgroundImage="https://images.unsplash.com/photo-1512290923902-8a9f81dc236c?auto=format&fit=crop&w=1920&q=85"
+        backgroundImage="https://images.unsplash.com/photo-1617897903246-719242758050?auto=format&fit=crop&w=1920&q=85"
       />
 
       {/* MAIN ABOUT CONTENT */}
